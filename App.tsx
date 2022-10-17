@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { SafeAreaView, StyleSheet, ImageBackground, Image } from 'react-native'
+
+import * as D from './src/data'
+
+const avatarUrl = D.randomAvatarUrl()
+const avatarSize = 50
 
 export default function App() {
+  console.log(avatarUrl)
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaView style={styles.flex}>
+      <ImageBackground
+        style={[styles.flex, styles.imageBackground]}
+        source={require('./src/assets/images/city-image.jpg')}
+      >
+        <Image source={{ uri: avatarUrl }} style={[styles.image]} />
+      </ImageBackground>
+    </SafeAreaView>
+  )
 }
 
+// prettier-ignore
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  flex: { flex: 1 },
+  imageBackground: { padding: 10 },
+  image: { width: avatarSize, height: avatarSize, borderRadius: avatarSize / 2, }
+})
