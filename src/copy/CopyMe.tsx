@@ -1,7 +1,7 @@
 import React from 'react'
 import type { FC } from 'react'
 import { Text, View, Image } from 'react-native'
-import { styles } from '../assets/styles/Person.style'
+import { styles } from '../assets/styles'
 import moment from 'moment'
 // import 'moment/locale/pt-br'
 import * as D from '../data'

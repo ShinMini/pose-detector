@@ -1,2 +1,2 @@
-export * from './ViewStyles'
-export * from './TextStyles'
+export * from './View.style'
+export * from './Text.style'

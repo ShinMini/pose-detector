@@ -10,7 +10,7 @@ export const createRandomPerson = (): IPerson => {
     modifiedDate: new Date(),
     name,
     email: F.randomEmail(),
-    avatar: F.randomAvatorUrl(name),
+    avatar: F.randomAvatarUrl(name),
     image: F.randomImage(),
     comments: F.randomParagraphs(4),
     counts: {
