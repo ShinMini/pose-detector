@@ -1,14 +1,18 @@
-import React, { useMemo } from 'react'
-import type { FC } from 'react'
+import React, { SetStateAction, useMemo } from 'react'
+import type { FC, Dispatch } from 'react'
 // prettier-ignore
 import { StyleSheet, SafeAreaView, View, FlatList, ScrollView, Dimensions, Text} from 'react-native'
 import { Colors } from 'react-native-paper'
 import PersonUsingValueState from './PersonUsingValueState'
 import PersonUsingPassingState from './PersonUsingPassingState'
-import PersonIcons from './PersonIcons'
 import * as D from '../data'
 
 const { width } = Dimensions.get('window')
+
+// content도 차라리 state 받아서 사용할 수 있게 설정해주자.
+export type ContentProps = {
+  people: D.IPerson[]
+}
 
 type PersonInformation = {
   title: string
@@ -20,23 +24,17 @@ const personInformations: PersonInformation[] = [
 ]
 const numberOfComponents = personInformations.length
 
-export default function Content() {
-  const people = useMemo(() => D.makeArray(10).map(D.createRandomPerson), [])
-  const children = useMemo(
-    () =>
+// prettier-ignore
+const Content: FC<ContentProps> = ({people}) => {
+  const children = useMemo(() =>
       personInformations.map(({ title, Component }: PersonInformation) => (
         <View style={{ flex: 1 }} key={title}>
           <Text style={[styles.text]}>{title}</Text>
-          <FlatList
-            data={people}
+          <FlatList data={people}
             renderItem={({ item }) => <Component person={item} />}
             keyExtractor={(item, index) => item.id}
-            ItemSeparatorComponent={() => <View style={styles.itemSeperator} />}
-          />
-        </View>
-      )),
-    []
-  )
+            ItemSeparatorComponent={() => <View style={styles.itemSeperator} />} />
+        </View>)), [people.length])
   return (
     <SafeAreaView style={styles.flex}>
       <ScrollView
@@ -48,6 +46,7 @@ export default function Content() {
     </SafeAreaView>
   )
 }
+export default Content
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
