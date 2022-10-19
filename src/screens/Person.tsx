@@ -4,8 +4,6 @@ import { Text, View, Image, Alert } from 'react-native'
 import { Colors } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import moment from 'moment'
-// import 'moment/locale/ko'  // without this line it didn't work
-// import 'moment/locale/pt-br'
 import * as D from '../data'
 import { Avatar, IconText } from '../components'
 import { styles } from '../assets/styles/Person.style'
@@ -19,7 +17,8 @@ export type PersonProps = {
 // prettier-ignore
 const countIconPressed = (name: string) => () => Alert.alert(`${name} pressed !`)
 const avatarPressed = () => Alert.alert('avatar pressed !')
-const deletePressed = () => Alert.alert('delet pressed !')
+const deletePressed = () => Alert.alert('delete pressed !')
+
 
 // prettier-ignore
 const Person: FC<PersonProps> = ({ person }) => {

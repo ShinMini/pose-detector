@@ -8,7 +8,6 @@ const name = D.randomName()
 const avatarUrl = D.randomAvatarUrl(name)
 
 export default function TopBar() {
-  console.log(avatarUrl)
   return (
     <View style={[styles.view]}>
       <Image style={styles.avatar} source={{ uri: avatarUrl }} />

@@ -1,19 +1,18 @@
 import React, { useCallback } from 'react'
-import type { FC } from 'react'
-import { View, Text, Image, Alert } from 'react-native'
+import type { FC, Dispatch, SetStateAction } from 'react'
+import { View } from 'react-native'
 import { Colors } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import moment from 'moment'
-import * as D from '../data'
-import { Avatar, IconText } from '../components'
+import { IconText } from '../components'
 import { styles } from '../assets/styles/Person.style'
+import * as D from '../data'
 
-export type PersonProps = {
+export type PersonIconsProps = {
   person: D.IPerson
+  setPerson: Dispatch<SetStateAction<D.IPerson>>
 }
 
 // prettier-ignore
-const PersonUsingValueState: FC<PersonProps> = ({ person:initialPerson}) => {
+const PersonIcons: FC<PersonIconsProps> = ({ person, setPerson }) => {
   const commentPressed = useCallback(
     () =>
       setPerson((person) => {
@@ -39,10 +38,10 @@ const PersonUsingValueState: FC<PersonProps> = ({ person:initialPerson}) => {
             name="comment" size={24} color={Colors.blue500}
             textStyle={[styles.iconText]} text={person.counts.comment} />
           <IconText viewStyle={[styles.touchableIcon]} onPress={retweetPressed}
-            name="retweet" size={24} color={Colors.blue500}
+            name="share" size={24} color={Colors.purple500}
             textStyle={[styles.iconText]} text={person.counts.retweet} />
           <IconText viewStyle={[styles.touchableIcon]} onPress={heartPressed}
-            name="heart" size={24} color={Colors.blue500}
+            name="heart" size={24} color={Colors.red500}
             textStyle={[styles.iconText]} text={person.counts.heart} />
         </View>
   )
