@@ -1,5 +1,5 @@
-import React, { SetStateAction, useMemo } from 'react'
-import type { FC, Dispatch } from 'react'
+import React, { useMemo } from 'react'
+import type { FC } from 'react'
 // prettier-ignore
 import { StyleSheet, SafeAreaView, View, FlatList, ScrollView, Dimensions, Text} from 'react-native'
 import { Colors } from 'react-native-paper'
