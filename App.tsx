@@ -8,18 +8,23 @@ import Content from './src/screens/Content'
 import BottomBar from './src/screens/BottomBar'
 import * as D from './src/data'
 
+const FloatIcon = () => {
+  return (
+    <View style={[styles.absoluteView]}>
+      <Icon name="feather" size={40} color={Colors.white} />
+    </View>
+  )
+}
 export default function App() {
   const [people, setPeople] = useState<D.IPerson[]>([])
   return (
     <>
       <SafeAreaView style={styles.flex}>
-        <TopBar setPeople={setPeople} />
-        <Content people={people} />
-        <BottomBar />
+        {/* <TopBar setPeople={setPeople} /> */}
+        <Content />
+        {/* <BottomBar /> */}
       </SafeAreaView>
-      <View style={[styles.absoluteView]}>
-        <Icon name="feather" size={40} color={Colors.white} />
-      </View>
+      {/* <FloatIcon /> */}
     </>
   )
 }

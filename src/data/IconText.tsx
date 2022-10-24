@@ -3,8 +3,8 @@ import type { FC, ComponentProps } from 'react'
 import { Text } from 'react-native'
 import type { TextStyle, StyleProp } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { TouchableView } from './TouchableView'
-import type { TouchableViewProps } from './TouchableView'
+import { TouchableView } from '../components/TouchableView'
+import type { TouchableViewProps } from '../components/TouchableView'
 
 export type IconTextProps = TouchableViewProps &
   ComponentProps<typeof Icon> & {

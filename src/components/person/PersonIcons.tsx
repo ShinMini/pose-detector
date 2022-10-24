@@ -2,9 +2,9 @@ import React, { useCallback } from 'react'
 import type { FC, Dispatch, SetStateAction } from 'react'
 import { View } from 'react-native'
 import { Colors } from 'react-native-paper'
-import { IconText } from '../components'
-import { styles } from '../assets/styles/Person.style'
-import * as D from '../data'
+import { IconText } from '..'
+import { styles } from '../../assets/styles/Person.style'
+import * as D from '../../data'
 
 export type PersonIconsProps = {
   person: D.IPerson

@@ -1,3 +1,3 @@
 export * from './TouchableView'
-export * from './Avatar'
-export * from './IconText'
+export * from './person/Avatar'
+export * from '../data/IconText'
