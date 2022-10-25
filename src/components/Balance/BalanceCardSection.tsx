@@ -6,9 +6,8 @@ import styled from 'styled-components/native'
 import BalanceCard from './BalanceCard'
 
 const BalanceCardSectionBackground = styled.View`
-  width: 100%;
-  align-items: center;
-  flex: 2;
+  width: 95%;
+  height: 75%;
 `
 
 // types

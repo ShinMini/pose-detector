@@ -5,22 +5,22 @@ import styled from 'styled-components/native'
 import RegularButton from '../Buttons/RegularButton'
 import { Ionicons } from '@expo/vector-icons'
 import { colors } from '../colors'
+import MediaPicker from '../Picker/MediaPicker'
 
 const ButtonSectionBackground = styled.View`
-  width: 100%;
+  width: 90%;
   align-items: center;
-  flex: 1;
+  height: 20%;
 `
 
 const ButtonSection: FC = () => {
   return (
-  <ButtonSectionBackground>
-   <RegularButton btnStyles={{}} onPress={() => {}}> 
-      Cancel <Ionicons size={17} name='card' color={colors.white} />
-   </RegularButton>
-   
-
-  </ButtonSectionBackground>
+    <ButtonSectionBackground>
+      <RegularButton btnStyles={{}} onPress={(notUsed) => <MediaPicker />}>
+        내 동작 확인하기
+        <Ionicons size={17} name="card" color={colors.white} />
+      </RegularButton>
+    </ButtonSectionBackground>
   )
 }
 

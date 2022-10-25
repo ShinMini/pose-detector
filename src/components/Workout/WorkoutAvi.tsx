@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 // custom components
 import { colors } from '../colors'
 
+
 const StyledView = styled.View`
   height: 45px;
   width: 45px;
