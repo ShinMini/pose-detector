@@ -1,4 +1,3 @@
-Animated.timing 함수
 
 ``` typescript
 export const Animated.timing: ({
