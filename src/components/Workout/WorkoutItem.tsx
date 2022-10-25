@@ -11,16 +11,16 @@ import WorkoutAvi from './WorkoutAvi'
 
 const WorkoutRow = styled.View`
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-bottom: 15px;
+  margin-bottom: 25px;
 `
 const LeftView = styled.View`
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
   height: 100%;
+  align-items: center;
   flex: 2;
 `
 const RightView = styled.View`
@@ -38,21 +38,21 @@ const WorkoutItem: FC<WorkoutProps> = (props) => {
     <WorkoutRow>
       <LeftView>
         <WorkoutAvi background={props.art.background} icon={props.art.icon} />
+        <View>
+          <RegularText
+            textStyles={{
+              color: colors.secondary,
+              textAlign: 'left',
+              marginBottom: 5,
+            }}
+          >
+            {props.title}
+          </RegularText>
+          <SmallText textStyles={{ color: colors.grayDark, textAlign: 'left' }}>
+            {props.subtitle}
+          </SmallText>
+        </View>
       </LeftView>
-      <View>
-        <RegularText
-          textStyles={{
-            color: colors.secondary,
-            textAlign: 'left',
-            marginBottom: 5,
-          }}
-        >
-          {props.title}
-        </RegularText>
-        <SmallText textStyles={{ color: colors.grayDark, textAlign: 'left' }}>
-          {props.subtitle}
-        </SmallText>
-      </View>
       <RightView>
         <RegularText
           textStyles={{

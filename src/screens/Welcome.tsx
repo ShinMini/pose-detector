@@ -25,7 +25,7 @@ const TopSection = styled.View`
 const TopImage = styled.Image`
   width: 100%;
   height: 100%;
-  resize-mode: stretch;
+  resize-mode: cover;
 `
 const BottomSection = styled.View`
   width: 100%;
@@ -46,17 +46,26 @@ const Welcome: FC<Props> = ({ navigation }) => {
       <StatusBar style="light" />
       <WelcomeContainer>
         <TopSection>
-          <TopImage style={{ reSize: 'stretch' }} source={background} />
+          <TopImage source={background} />
         </TopSection>
         <BottomSection>
-          <BigText textStyles={{ width: '70%', marginBottom: 25 }}>
+          <BigText
+            textStyles={{
+              width: '70%',
+              marginBottom: 25,
+              color: colors.accent,
+            }}
+          >
             Try motion analysis service on mobile
           </BigText>
-          <SmallText textStyles={{ width: '70%', marginBottom: 25 }}>
+          <SmallText
+            textStyles={{ width: '70%', marginBottom: 25, color: colors.gray }}
+          >
             Best application for correcting work out posture through motion
             analysis using machine learning!
           </SmallText>
           <RegularButton
+            textStyles={{ fontSize: 25 }}
             onPress={() => {
               navigation.navigate('Home')
             }}

@@ -71,7 +71,7 @@ const RootStack: FC = () => {
             options={{
               headerTitle: (props) => (
                 <Greeting
-                  mainText="Hi, Hyeon Min!"
+                  mainText="홍길동님, 안녕하세요 :)"
                   subText="Welcome back"
                   {...props}
                 />

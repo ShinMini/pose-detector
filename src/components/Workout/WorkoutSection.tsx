@@ -35,7 +35,7 @@ const WorkoutSection: FC<WorkoutSectionProps> = (props) => {
     <WorkoutSectionBackground>
       <WorkoutRow style={{ marginBottom: 25, backgroundColor: colors.gray }}>
         <RegularText textStyles={{ fontSize: 19, color: colors.secondary }}>
-          Work out List
+          운동 기록
         </RegularText>
         <SmallText textStyles={{ color: colors.secondary }}>
           Recent

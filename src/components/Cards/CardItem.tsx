@@ -37,49 +37,58 @@ const CardRow = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex: 1;
+`
+const CardHeader = styled.View`
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex: 1;
 `
 const Logo = styled.Image`
-  width: 100%;
-  height: 80%;
-  // resize-mode: contain;
-  flex: 1;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  resize-mode: contain;
 `
 
 // types
 import { CardProps } from './types'
 
-// prettier-ignore
 const CardItem: FC<CardProps> = (props) => {
-   // configuring navigation
-   const navigation = useNavigation<HomeProps['navigation']>();
+  // configuring navigation
+  const navigation = useNavigation<HomeProps['navigation']>()
 
-   // move to balance page
+  // move to balance page
   const handlePress = () => {
-      navigation.navigate('Balance', {...props})
+    navigation.navigate('Balance', { ...props })
   }
 
   return (
     <CardBackground>
-      <CardTouchable underlayColor={colors.secondary} onPress={handlePress} >
-         <TouchableView>
-            <CardRow>
-               <RegularText textStyles={{color: colors.white}}>
-                  ***** {props.accountNo.slice(6, 10)}
-               </RegularText>
-            </CardRow>
-            <CardRow>
-               <View style={{ flex: 3}}>
-                  <SmallText
-                  textStyles={{marginBottom: 5, color: colors.grayLight }}>
-                     Total balance
-                  </SmallText>
-                  <RegularText textStyles={{fontSize: 19}}>
-                     ${props.balance}
-                  </RegularText>
-               </View>
-               <Logo source={props.logo} />
-            </CardRow>
-         </TouchableView>
+      <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
+        <TouchableView>
+          <Logo source={props.logo} />
+          <CardHeader>
+            <RegularText textStyles={{ color: colors.white }}>
+              {props.accountNo}
+            </RegularText>
+          </CardHeader>
+          <CardRow>
+            <View style={{ flex: 3 }}>
+              <SmallText
+                textStyles={{ marginBottom: 5, color: colors.grayLight }}
+              >
+                Total balance
+              </SmallText>
+              <RegularText textStyles={{ fontSize: 19 }}>
+                ${props.balance}
+              </RegularText>
+            </View>
+          </CardRow>
+        </TouchableView>
       </CardTouchable>
     </CardBackground>
   )

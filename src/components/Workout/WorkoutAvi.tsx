@@ -12,6 +12,7 @@ const StyledView = styled.View`
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
 `
 
 // types

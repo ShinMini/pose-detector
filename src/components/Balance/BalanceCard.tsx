@@ -4,8 +4,6 @@ import styled from 'styled-components/native'
 
 // components
 import { colors } from '../colors'
-import RegularText from '../Texts/RegularText'
-import SmallText from '../Texts/SmallText'
 
 const BalanceBackground = styled.ImageBackground`
   height: 75%;
@@ -41,15 +39,14 @@ const Logo = styled.Image`
 // types
 import { BalanceCardProps } from './types'
 
-// prettier-ignore
 const BalanceItem: FC<BalanceCardProps> = () => {
   return (
     <BalanceBackground>
       <BalanceTouchable underlayColor={colors.secondary}>
-         <TouchableView>
-            <BalanceRow></BalanceRow>
-            <BalanceRow></BalanceRow>
-         </TouchableView>
+        <TouchableView>
+          <BalanceRow></BalanceRow>
+          <BalanceRow></BalanceRow>
+        </TouchableView>
       </BalanceTouchable>
     </BalanceBackground>
   )
