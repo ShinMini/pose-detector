@@ -1,5 +1,6 @@
 export const colors = {
   white: '#fff',
+  black: '#000',
   primary: '#ef835d',
   yellow: '#F2B705',
   gray: '#d1d5db',
@@ -15,7 +16,7 @@ export const colors = {
   secondaryContainer: 'rgb(231, 228, 191)',
   onSecondaryContainer: 'rgb(29, 29, 6)',
   onTertiary: 'rgb(255, 255, 255)',
-  tertiaryContainer: 'rgb(191, 236, 216)',
+  tertiaryContainer: 'rgb(205, 233, 220)',
   onTertiaryContainer: 'rgb(0, 33, 23)',
   error: 'rgb(186, 26, 26)',
   onError: 'rgb(255, 255, 255)',

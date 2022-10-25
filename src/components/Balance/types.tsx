@@ -1,9 +1,7 @@
-import {CardProps} from '../Cards/types'
+import { CardProps } from '../Cards/types'
 
 export interface AmountProps {
-   balance: number | undefined;
+  balance: string | number | undefined
 }
 
-export interface BalanceCardProps extends CardProps {
-}
-
+export interface BalanceCardProps extends CardProps {}

@@ -2,10 +2,12 @@ import React from 'react'
 import type { FC } from 'react'
 import { View } from 'react-native'
 import styled from 'styled-components/native'
+import { Colors } from 'react-native-paper'
 
 // components
 import { ScreenWidth } from '../shared'
 import { colors } from '../colors'
+import BigText from '../Texts/BigText'
 import RegularText from '../Texts/RegularText'
 import SmallText from '../Texts/SmallText'
 
@@ -17,7 +19,7 @@ const CardBackground = styled.ImageBackground`
   height: 75%;
   width: ${ScreenWidth * 0.67}px;
   resize-mode: cover;
-  background-color: ${colors.accent};
+  background-color: ${colors.tertiaryContainer};
   border-radius: 25px;
   margin-right: 25px;
   overflow: hidden;
@@ -41,9 +43,8 @@ const CardRow = styled.View`
 `
 const CardHeader = styled.View`
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
-  flex: 1;
 `
 const Logo = styled.Image`
   position: absolute;
@@ -66,26 +67,44 @@ const CardItem: FC<CardProps> = (props) => {
     navigation.navigate('Balance', { ...props })
   }
 
+  // background-color: ${colors.surfaceVariant};
+  let color: any = colors.surfaceVariant
+  if (props.cardColor !== colors.surfaceVariant) color = props.cardColor
   return (
-    <CardBackground>
+    <CardBackground styles={{ backgroundColor: { color } }}>
       <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
         <TouchableView>
           <Logo source={props.logo} />
           <CardHeader>
-            <RegularText textStyles={{ color: colors.white }}>
+            <BigText textStyles={{ color: colors.grayDark, fontSize: 25 }}>
               {props.accountNo}
-            </RegularText>
+            </BigText>
+            <SmallText
+              textStyles={{
+                marginBottom: 5,
+                color: Colors.lightBlue300,
+                fontSize: 13,
+              }}
+            >
+              {props.accountNo} motion analysis
+            </SmallText>
           </CardHeader>
           <CardRow>
-            <View style={{ flex: 3 }}>
-              <SmallText
-                textStyles={{ marginBottom: 5, color: colors.grayLight }}
+            <View style={{ flex: 1 }}>
+              <RegularText
+                textStyles={{ fontSize: 20, color: Colors.yellow900 }}
               >
-                Total balance
-              </SmallText>
-              <RegularText textStyles={{ fontSize: 19 }}>
-                ${props.balance}
+                Click to check your motion
               </RegularText>
+              <SmallText
+                textStyles={{
+                  marginTop: 5,
+                  color: colors.yellow,
+                  fontSize: 15,
+                }}
+              >
+                {props.alias}
+              </SmallText>
             </View>
           </CardRow>
         </TouchableView>

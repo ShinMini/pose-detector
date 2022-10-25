@@ -3,9 +3,10 @@ import type { ImageSourcePropType } from 'react-native'
 export interface CardProps {
   id: number
   accountNo: string
-  balance?: number
+  balance?: string
   alias?: string
   logo: ImageSourcePropType
+  cardColor?: string
 }
 
 export interface CardSectionProps {

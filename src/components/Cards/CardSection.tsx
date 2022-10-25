@@ -19,10 +19,9 @@ const CardSection: FC<CardSectionProps> = (props) => {
       data={props.data}
       horizontal={true}
       showHorizontalScrollIndicator={false}
-      contentContainerStyle={{ paddingRight: 25, allignItems: 'center' }
-   }
-   keyExtractor={({id}: any) => id.toString()}
-   renderItem={({item}: any) => <CardItem {...item}/>}
+      contentContainerStyle={{ paddingRight: 25, alignItems: 'center' }}
+      keyExtractor={({ id }: any) => id.toString()}
+      renderItem={({ item }: any) => <CardItem {...item} />}
     />
   )
 }
