@@ -41,12 +41,9 @@ import { BalanceCardProps } from './types'
 import babel from '../../../assets/workout/babel.jpg'
 
 const BalanceItem: FC<BalanceCardProps> = (props) => {
-
   return (
     <BalanceBackground source={babel}>
-      <BalanceTouchable 
-      underlayColor={colors.secondary}
-      >
+      <BalanceTouchable underlayColor={colors.secondary}>
         <TouchableView>
           <BalanceRow>
             <RegularText>

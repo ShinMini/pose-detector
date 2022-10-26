@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import type { FC } from 'react'
-import { Button, Image, View, Platform } from 'react-native'
+import { Image, View } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
 import type { ImageInfo } from 'expo-image-picker'
 
