@@ -15,9 +15,11 @@
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/stack": "^6.3.2",
+    "@tensorflow-models/pose-detection": "^2.0.0",
     "expo": "^46.0.16",
     "expo-app-loading": "~2.1.0",
     "expo-font": "~10.2.0",
+    "expo-image-picker": "~13.3.1",
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
     "faker": "^5.5.3",
@@ -31,8 +33,7 @@
     "react-native-screens": "~3.15.0",
     "react-native-svg": "12.3.0",
     "react-native-web": "~0.18.7",
-    "styled-components": "^5.3.6",
-    "expo-image-picker": "~13.3.1"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
