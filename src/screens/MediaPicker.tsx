@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import type { FC } from 'react'
 import { Button, Image, View, Platform } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
 import type { ImageInfo } from 'expo-image-picker'
 
+// types
+import { RootStackParamList } from '../navigators/RootStack'
+import { StackScreenProps } from '@react-navigation/stack'
+export type Props = StackScreenProps<RootStackParamList, 'Welcome'>
+
 export const MediaPicker: FC = () => {
   const [image, setImage] = useState<ImageInfo>()
 
-  const pickImage = async () => {
+  const pickImage = useCallback(async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -16,16 +21,15 @@ export const MediaPicker: FC = () => {
       quality: 1,
     })
 
-    console.log(result)
-
     if (!result.cancelled) {
       setImage(result)
     }
-  }
+  }, [])
+
+  pickImage()
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button title="Pick an image from camera roll" onPress={pickImage} />
       {image && (
         <Image
           source={{ uri: image.uri }}

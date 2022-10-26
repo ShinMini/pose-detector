@@ -4,7 +4,6 @@ import styled from 'styled-components/native'
 
 // components
 import { colors } from '../colors'
-import BigText from '../Texts/BigText'
 import RegularText from '../Texts/RegularText'
 import SmallText from '../Texts/SmallText'
 
@@ -37,18 +36,22 @@ const Logo = styled.Image`
   resize-mode: contain;
   flex: 1;
 `
-
 // types
 import { BalanceCardProps } from './types'
 import babel from '../../../assets/workout/babel.jpg'
 
-const BalanceItem: FC<BalanceCardProps> = () => {
+const BalanceItem: FC<BalanceCardProps> = (props) => {
+
   return (
     <BalanceBackground source={babel}>
-      <BalanceTouchable underlayColor={colors.secondary}>
+      <BalanceTouchable 
+      underlayColor={colors.secondary}
+      >
         <TouchableView>
           <BalanceRow>
-            <RegularText>운동 기본 동작에 대해 설명하는 세션</RegularText>
+            <RegularText>
+              {props.accountNo} 기본 동작에 대해 설명하는 세션
+            </RegularText>
           </BalanceRow>
           <RegularText>버튼 클릭시 카메라 라이브러리 호출 예정</RegularText>
           <BalanceRow>
