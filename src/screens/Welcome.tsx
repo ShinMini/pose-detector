@@ -19,7 +19,7 @@ const WelcomeContainer = styled(Container)`
 
 const TopSection = styled.View`
   width: 100%;
-  flex: 1;
+  height: 40%;
   max-height: 55%;
 `
 const TopImage = styled.Image`
