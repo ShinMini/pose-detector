@@ -1,4 +1,3 @@
-/*
 import * as Tensor from '@tensorflow-models/pose-detection'
 import image from '../../assets/tensor/male-activity.jpg'
 
@@ -14,5 +13,3 @@ const TensorflowExample = async () => {
 }
 
 TensorflowExample()
-
-*/

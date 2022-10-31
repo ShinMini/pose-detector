@@ -6,7 +6,7 @@ import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../feat/MediaPicker'
-import Test from '../test/CanvasExample'
+import Test from '../screens/CanvasView'
 
 // custom components
 import { colors } from '../components/colors'
