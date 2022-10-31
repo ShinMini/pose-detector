@@ -1,15 +1,14 @@
 import * as Tensor from '@tensorflow-models/pose-detection'
-import image from '../pose.jpg'
 
-const TensorflowExample = async () => {
+const TensorflowExample = async (pose: ImageData) => {
   const model = Tensor.SupportedModels.MoveNet
   const detector = await Tensor.createDetector(model)
 
-  const poses = await detector.estimatePoses(image)
+  const poses = await detector.estimatePoses(pose)
 
   console.log(poses)
-  console.log(typeof image)
-  console.log(image)
+  console.log(typeof pose)
+  console.log(pose)
 }
 
-TensorflowExample()
+export default TensorflowExample
