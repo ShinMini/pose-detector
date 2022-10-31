@@ -29,6 +29,12 @@ interface ProfileProps {
   onPress?: ((event: GestureResponderEvent) => void) | undefined
 }
 
+
+/**
+ * 
+ * @param props get Profile information
+ * @returns {React.Component} profile info * icons in StyledView
+ */
 const Profile: FC<ProfileProps> = (props) => {
   return (
     <StyledView onPress={props.onPress} style={props.imgContainerStyle}>

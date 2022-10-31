@@ -27,6 +27,11 @@ type ButtonProps = {
   children?: React.ReactNode
 }
 
+/**
+ * 
+ * @param props btnStyles, onPress, textStyles, children
+ * @returns {React.ComponentElement} return regularText in ButtonView 
+ */
 const RegularButton: FC<ButtonProps> = (props) => {
   return (
     <ButtonView style={props.btnStyles} onPress={props.onPress}>

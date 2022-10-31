@@ -3,6 +3,10 @@ import { Colors } from 'react-native-paper'
 import { Platform, View, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+/** flat icons, 플로팅 아이콘 기능
+ *
+ * @return {JSX node}feather Icon in absoluteView
+ */
 const FloatIcon: FC = () => {
   return (
     <View style={[styles.absoluteView]}>
