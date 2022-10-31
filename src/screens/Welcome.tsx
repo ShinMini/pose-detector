@@ -72,6 +72,14 @@ const Welcome: FC<Props> = ({ navigation }) => {
           >
             Get Started
           </RegularButton>
+          <RegularButton
+            textStyles={{ fontSize: 25 }}
+            onPress={() => {
+              navigation.navigate('Test')
+            }}
+          >
+            Test View
+          </RegularButton>
         </BottomSection>
       </WelcomeContainer>
     </>
