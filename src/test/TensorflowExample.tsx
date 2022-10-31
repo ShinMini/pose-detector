@@ -1,5 +1,5 @@
 import * as Tensor from '@tensorflow-models/pose-detection'
-import image from '../../assets/tensor/male-activity.jpg'
+import image from '../pose.jpg'
 
 const TensorflowExample = async () => {
   const model = Tensor.SupportedModels.MoveNet

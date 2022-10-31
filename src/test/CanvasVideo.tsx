@@ -1,3 +1,4 @@
+/*
 import CanvasVideo from 'react-canvas-video'
 
 import react from 'react'
@@ -10,3 +11,4 @@ export const CanvasVideo = () => {
    )
 
 }
+*/
