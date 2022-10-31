@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react'
 import type { FC } from 'react'
-import { Image, View } from 'react-native'
+import { Image, View, Text } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
 import type { ImageInfo } from 'expo-image-picker'
 
@@ -10,7 +10,8 @@ import { StackScreenProps } from '@react-navigation/stack'
 export type Props = StackScreenProps<RootStackParamList, 'Welcome'>
 
 // user component
-import ImagePreview from './ImagePreview'
+import ImagePreview from '../screens/MediaPreview'
+import VideoPreview from '../components/Media/VideoPreview'
 
 export const MediaPicker: FC = () => {
   const [image, setImage] = useState<ImageInfo>()
@@ -26,14 +27,21 @@ export const MediaPicker: FC = () => {
     })
     if (!result.cancelled) {
       setImage(result)
-    }else {
+    } else {
       setError(result.cancelled)
     }
   }, [])
 
   useMemo(pickImage, [])
 
-  return <ImagePreview pickedImage={image} error={error}/>
+  console.log(image)
+  // prettier-ignore
+  if(image === undefined) return <View><Text>Error</Text></View>
+
+  // prettier-ignore
+  return image.type === 'image' ?
+  <ImagePreview pickedImage={image} error={error} /> :
+  <VideoPreview pickedVideo={image}/>
 }
 
 export default MediaPicker

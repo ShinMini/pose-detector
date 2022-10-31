@@ -7,7 +7,7 @@ export interface ImgProps {
   pickedImage: ImageInfo | undefined
   error?: boolean
 }
-export const ImagePreview: FC<ImgProps> = (props) => {
+export const MediaPreview: FC<ImgProps> = (props) => {
   if (props.pickedImage === undefined || props.error === true)
     return (
       <View>
@@ -28,4 +28,4 @@ export const ImagePreview: FC<ImgProps> = (props) => {
   }
 }
 
-export default ImagePreview
+export default MediaPreview

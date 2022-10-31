@@ -5,7 +5,7 @@ import type { FC } from 'react'
 import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
-import MediaPicker from '../screens/MediaPicker'
+import MediaPicker from '../feat/MediaPicker'
 import Test from '../test/CanvasExample'
 
 // custom components
