@@ -20,6 +20,11 @@ interface GreetingProps {
   subTextStyles?: StyleProp<TextStyle>
 }
 
+/**
+ * Greeting view display at first lunched the APP
+ * @param props don't need props properties
+ * @returns {React.component} Welcome texts in StyleView
+ */
 const Greeting: FC<GreetingProps> = (props) => {
   return (
     <StyledView>
