@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import type { FC } from 'react'
 import { Image, View } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
@@ -9,8 +9,12 @@ import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 export type Props = StackScreenProps<RootStackParamList, 'Welcome'>
 
+// user component
+import ImagePreview from './ImagePreview'
+
 export const MediaPicker: FC = () => {
   const [image, setImage] = useState<ImageInfo>()
+  const [error, setError] = useState(false)
 
   const pickImage = useCallback(async () => {
     // No permissions request is necessary for launching the image library
@@ -20,24 +24,16 @@ export const MediaPicker: FC = () => {
       aspect: [4, 3],
       quality: 1,
     })
-
     if (!result.cancelled) {
       setImage(result)
+    }else {
+      setError(result.cancelled)
     }
   }, [])
 
-  pickImage()
+  useMemo(pickImage, [])
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {image && (
-        <Image
-          source={{ uri: image.uri }}
-          style={{ width: 200, height: 200 }}
-        />
-      )}
-    </View>
-  )
+  return <ImagePreview pickedImage={image} error={error}/>
 }
 
 export default MediaPicker
