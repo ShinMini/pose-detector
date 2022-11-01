@@ -56,7 +56,7 @@ const Welcome: FC<Props> = ({ navigation }) => {
               color: colors.accent,
             }}
           >
-            Try motion analysis service on mobile
+            Try motion analysis service
           </BigText>
           <SmallText
             textStyles={{ width: '70%', marginBottom: 25, color: colors.gray }}
@@ -71,6 +71,14 @@ const Welcome: FC<Props> = ({ navigation }) => {
             }}
           >
             Get Started
+          </RegularButton>
+          <RegularButton
+            textStyles={{ fontSize: 25 }}
+            onPress={() => {
+              navigation.navigate('MediaPicker')
+            }}
+          >
+            Go Test
           </RegularButton>
         </BottomSection>
       </WelcomeContainer>

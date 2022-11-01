@@ -10,10 +10,20 @@ import { StackScreenProps } from '@react-navigation/stack'
 export type Props = StackScreenProps<RootStackParamList, 'Welcome'>
 
 // user component
-import ImagePreview from '../screens/MediaPreview'
+import ImagePreview from '../components/Media/ImagePreview'
 import VideoPreview from '../components/Media/VideoPreview'
 
-export const MediaPicker: FC = () => {
+// tensorflow test
+import TensorView from '../feat/TensorView'
+
+// navigation
+import { useNavigation } from '@react-navigation/native'
+import type { Props as HomeProps } from './Home'
+
+export const MediaPicker: FC<Props> = ({ route }) => {
+  // configuring navigation
+  const navigation = useNavigation<HomeProps['navigation']>()
+
   const [image, setImage] = useState<ImageInfo>()
   const [error, setError] = useState(false)
 
@@ -40,7 +50,8 @@ export const MediaPicker: FC = () => {
 
   // prettier-ignore
   return image.type === 'image' ?
-  <ImagePreview pickedImage={image} error={error} /> :
+  // <ImagePreview pickedImage={image} error={error} /> :
+  <View onLayout={() => navigation.navigate('TensorView', {pickedImage: image})} /> :
   <VideoPreview pickedVideo={image}/>
 }
 

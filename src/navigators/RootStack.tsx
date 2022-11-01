@@ -5,8 +5,9 @@ import type { FC } from 'react'
 import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
-import MediaPicker from '../feat/MediaPicker'
-import Test from '../test/CanvasExample'
+import MediaPicker from '../screens/MediaPicker'
+import CanvasExample from '../test/CanvasExample'
+import TensorView from '../feat/TensorView'
 
 // custom components
 import { colors } from '../components/colors'
@@ -24,12 +25,16 @@ import { createStackNavigator } from '@react-navigation/stack'
 // for balance screen
 import { CardProps } from '../components/Cards/types'
 
+// for TensorView screen
+import { ImgProps } from '../components/Media/types'
+
 export type RootStackParamList = {
   Welcome: undefined
   Home: undefined
   Balance: CardProps
   MediaPicker: undefined
-  Test: undefined
+  CanvasExample: undefined
+  TensorView: ImgProps
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
@@ -75,7 +80,7 @@ const RootStack: FC = () => {
             options={{
               headerTitle: (props) => (
                 <Greeting
-                  mainText="홍길동님, 안녕하세요 :)"
+                  mainText="신현민님, 안녕하세요 :)"
                   subText="Welcome back"
                   {...props}
                 />
@@ -108,9 +113,18 @@ const RootStack: FC = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Test"
-            component={Test}
+            name="CanvasExample"
+            component={CanvasExample}
             options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TensorView"
+            component={TensorView}
+            options={({ route }) => ({
+              pickedImage: route?.params?.pickedImage,
+
+              headerShown: false,
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>

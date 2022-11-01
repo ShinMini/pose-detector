@@ -1,81 +1,41 @@
+## tensorflow model 전처리 과정
 
+1. 저장된 모델과 가중치값을 불러옴.
+2. 이미지를 Tensor 데이터 형식으로 decoding
+3. 예측 시작
+
+# 1. 저장된 모델과 가중치 값 불러오기
 ``` typescript
-export const Animated.timing: ({
-   // Animated.ValueXY
-   value: Animated.Value | Animated.ValueXY,
-   config: Animated.TimingAnimationConfig
-  ) => Animated.CompositeAnimation;
-}
-
-// 이떄 Animated.timing 내의 config 속성(Animated.TimingAnimationConfig) 정보
-interface AnimationConfig {
-   // JS engine(false) or Native Animation engine(true) 결정.
-   useNativeDriver: boolean;
-}
- interface TimingAnimationConfgi extends AnimationConfig {
-   toValue: number | Animated.Value // new Animated.Value(시작값)의 끝값 결정.
-   durtion?: number  // 애니메이션 진행 시간(millisecond 단위, 1초는 1000ms)
-   delay?: number // 애니메이션 진행 전 대기 시간
-   easing?: (value: number) => number;    // Easing이 제공하는 보간 함수 설정
- }
-
+ await tf.ready();
+    // load the trained model
+    return await tf.loadLayersModel(bundleResourceIO(modelJson, modelWeights));
 ```
 
-# easing? 
-* 보간 함수 모음(imterpolation functions) 
-* 여러 가지 보간 함수를 설정하는 데 사용.
+# 2. 이미지를 Tensor 데이터 형식으로 decoding
+``` ts
+  const uIntArray = Base64Binary.decode(base64);
+    // decode a JPEG-encoded image to a 3D Tensor of dtype
+    // 이미지를 3차원 Tensor 모델로 encoding
+    const decodedImage = decodeJpeg(uIntArray, 3);
 
-# Easing 타입 객체 ..이거 약간 가속도 함수네요.
-
-
-``` typescript
-export type EasingFunction = (value: number) => number;
-// 이미 많은 종류의 가속도 함수가 구현되어 있네요.
-export interface Easing {
-   linear: EasingFunction;
-   ease: EasingFunction;
-   quad: EasingFunction;
-   sin: EasingFunction;
-   exp: EasingFunction;
-   bounce: EasingFunction;
-   // ...(생략)
-}
-
+    // reshape Tensor into a 4D array
+    // Tensor모델로 encoding된 데이터를 4D Tensor모델로 형변환
+    return decodedImage.reshape([
+      1,
+      BITMAP_DIMENSION,
+      BITMAP_DIMENSION,
+      TENSORFLOW_CHANNEL,
+    ]);
 ```
 
-# Animated.CompositeAnimation 타입 객체 
 
-* Animated.timing: AnimatedCompositeAnimation
-
-``` typescript
-export interface CompositeAnimation {
-   start: (callback?: EndCallback) => void;
-   // ... 생략
-}
-type EndResult = {finished: boolean};
-type EndCallback= (result: EndResult) => void;
-
-```
-
-* start 메서드에는 이를 호출한 코드에서 에니메이션이 종료되었는지 알 수 있는 콜백함수를 매개변수로 줄 수 있음. 
-* result 매개변수는 항상 {finished: true}이므로 생략 가능.
-
-``` typescript
-Animated.timing(animValue, {toValue: 1, duration: 1000, useNativeDriver: true}.
-   start() => console.log(result))   // ouput=> result: true
-```
-
-# addListenr 메서드
-* Animated.Value 클래스 , addListener 메서드 제공, 
-* 위 메서드의 콜백함수를 통해 핸져 보간 중인 값을 획득 가능.
-
-
-``` typescript
-export class Value {
-   //... 생략
-   addListener(callback: ValueListenerCallback): string; 
-   removeListener(id: string): void;
-   removeAllListener(): void;
-}
-type ValueListenerCAllback = (state: {value: number} ) => void;
+# 3. 예측 시작
+``` ts
+export const startPrediction = async (model, tensor) => {
+  try {
+    // predict against the model
+    const output = await model.predict(tensor);
+    // return typed array
+    return output.dataSync();
+  }
 ```
