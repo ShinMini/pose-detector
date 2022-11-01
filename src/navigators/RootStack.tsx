@@ -6,7 +6,7 @@ import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
-import Test from '../test/CanvasExample'
+import CanvasModule from '../screens/CanvasModule'
 
 // custom components
 import { colors } from '../components/colors'
@@ -24,12 +24,14 @@ import { createStackNavigator } from '@react-navigation/stack'
 // for balance screen
 import { CardProps } from '../components/Cards/types'
 
+// for TensorView screen
+
 export type RootStackParamList = {
   Welcome: undefined
   Home: undefined
   Balance: CardProps
   MediaPicker: undefined
-  Test: undefined
+  CanvasModule: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
@@ -75,7 +77,7 @@ const RootStack: FC = () => {
             options={{
               headerTitle: (props) => (
                 <Greeting
-                  mainText="홍길동님, 안녕하세요 :)"
+                  mainText="신현민님, 안녕하세요 :)"
                   subText="Welcome back"
                   {...props}
                 />
@@ -108,8 +110,8 @@ const RootStack: FC = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Test"
-            component={Test}
+            name="CanvasModule"
+            component={CanvasModule}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
