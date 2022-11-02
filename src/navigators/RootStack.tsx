@@ -7,6 +7,7 @@ import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
 import CanvasModule from '../screens/CanvasModule'
+import NativeView from '../screens/NativeView'
 
 // custom components
 import { colors } from '../components/colors'
@@ -32,6 +33,7 @@ export type RootStackParamList = {
   Balance: CardProps
   MediaPicker: undefined
   CanvasModule: undefined
+  NativeView: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
@@ -112,6 +114,11 @@ const RootStack: FC = () => {
           <Stack.Screen
             name="CanvasModule"
             component={CanvasModule}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="NativeView"
+            component={NativeView}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
