@@ -75,7 +75,7 @@ const Welcome: FC<Props> = ({ navigation }) => {
           <RegularButton
             textStyles={{ fontSize: 25 }}
             onPress={() => {
-              navigation.navigate('NativeView')
+              navigation.navigate('TensorView')
             }}
           >
             go to test view

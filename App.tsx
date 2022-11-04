@@ -2,6 +2,7 @@ import React from 'react'
 
 // custom font
 import { useFonts } from 'expo-font'
+
 import AppLoading from 'expo-app-loading'
 
 // React Navigation
@@ -14,6 +15,7 @@ export default function App() {
     'DancingScript-Regular': require('./assets/fonts/DancingScript-Regular.ttf'),
     'NanumPenScript-Regular': require('./assets/fonts/NanumPenScript-Regular.ttf'),
   })
+
   if (!fontsLoaded) {
     return <AppLoading />
   }

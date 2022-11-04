@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import React, { FC } from 'react'
 
 // Canvas
 import { Canvas, Image, useImage } from '@shopify/react-native-skia'
