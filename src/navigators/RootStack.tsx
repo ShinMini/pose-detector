@@ -8,7 +8,7 @@ import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
 import CanvasModule from '../screens/CanvasModule'
 import NativeView from '../screens/NativeView'
-import TensorView from '../../test/TensorView'
+import TensorView from '../screens/TensorView'
 
 // custom components
 import { colors } from '../components/colors'

@@ -1,11 +1,3 @@
 # native-android
 
-* 본격 적인 실험 이전 commit 해둠.
-
-##  react native expo에서 native java 언어로 view page 이동하는 예제 실험
-
-* expo-module에 있는 파일을 merge한거라 에러가 많이 발생할 수 있음.
-
-## STEP 1. expo-module yarn build부터 시작.
-
-
+현재 자꾸 yarn expo run:android 및 기타 expo 관련 실행 커멘드에서 에러가 발생하는 중. 원인 모르겠음.

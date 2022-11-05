@@ -1,3 +1,4 @@
+/*
 import { StyleSheet, Text, View, Button } from 'react-native'
 import React, { FC, useCallback } from 'react'
 
@@ -73,3 +74,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })
+
+*/

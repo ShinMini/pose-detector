@@ -7,6 +7,10 @@ module.exports = {
       "./assets",
       "./assets/bgs",
       "./assets/fonts",
-      "./assets/images"
+      "./assets/images",
+      "./assets/icons",
+      "./assets/tensorData",
+      "./assets/tensorModel",
+      "./assets/workout"
    ]
 }
