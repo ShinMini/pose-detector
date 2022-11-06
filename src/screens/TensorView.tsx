@@ -22,10 +22,11 @@ const detectorConfig: poseDetection.PosenetModelConfig = {
 const TensorView: FC<Props> = ({ route }) => {
   const [model, setModel] = useState<poseDetection.PoseDetector>()
 
+  // 불러온 모델을 최초 1회 실행 후 이후 실행시 저장.
   const getModel = useMemo(
     useCallback(async () => {
       try {
-        console.log('try ...')
+        console.log('try ... importing model')
         const detector = await poseDetection.createDetector(
           poseDetection.SupportedModels.PoseNet,
           detectorConfig
@@ -41,19 +42,18 @@ const TensorView: FC<Props> = ({ route }) => {
     []
   )
 
+  // mount 될 경우 model 불러오기 실행.
+  React.useEffect(() => {
+    getModel
+  }, [model])
+
   const onPressed = () => {
-    const pose = model?.estimatePoses(image)
+    let pose = model?.estimatePoses(image)
   }
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}> 현재 모델 상태: {typeof model}</Text>
-      <RegularButton
-        btnStyles={styles.button}
-        textStyles={styles.text}
-        onPress={() => getModel}
-        children={<Text>모델 불러오기</Text>}
-      />
       {model !== undefined && (
         <RegularButton
           btnStyles={styles.button}

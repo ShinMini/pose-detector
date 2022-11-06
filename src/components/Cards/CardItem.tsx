@@ -67,11 +67,10 @@ const CardItem: FC<CardProps> = (props) => {
     navigation.navigate('Balance', { ...props })
   }
 
-  // background-color: ${colors.surfaceVariant};
   let color: any = colors.surfaceVariant
   if (props.cardColor !== colors.surfaceVariant) color = props.cardColor
   return (
-    <CardBackground styles={{ backgroundColor: { color } }}>
+    <CardBackground>
       <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
         <TouchableView>
           <Logo source={props.logo} />

@@ -25,6 +25,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // for balance screen
 import { CardProps } from '../components/Cards/types'
+import { ImageInfo } from 'expo-image-picker'
+
+// type CanvasProps = {
+//   imgInfo: ImageInfo
+// }
 
 // for TensorView screen
 
@@ -33,7 +38,7 @@ export type RootStackParamList = {
   Home: undefined
   Balance: CardProps
   MediaPicker: undefined
-  CanvasModule: undefined
+  // CanvasModule: CanvasProps
   NativeView: undefined
   TensorView: undefined
 }
@@ -113,11 +118,11 @@ const RootStack: FC = () => {
             component={MediaPicker}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="CanvasModule"
             component={CanvasModule}
-            options={{ headerShown: false }}
-          />
+            options={({ route }) => ({ headerShown: false })}
+          /> */}
           <Stack.Screen
             name="NativeView"
             component={NativeView}

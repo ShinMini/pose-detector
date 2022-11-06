@@ -7,6 +7,7 @@ export interface ImgProps {
   pickedImage: ImageInfo | undefined
   error?: boolean
 }
+
 export const ImagePreview: FC<ImgProps> = (props) => {
   if (props.error)
     return (

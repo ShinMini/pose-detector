@@ -9,7 +9,7 @@ import { StackScreenProps } from '@react-navigation/stack'
 
 // get tensorflow model
 import { bundleResourceIO } from '@tensorflow/tfjs-react-native'
-import * as poseDetection from '@tensorflow-models/pose-detection';
+import * as poseDetection from '@tensorflow-models/pose-detection'
 
 export type Props = StackScreenProps<RootStackParamList, 'TensorView'>
 
@@ -24,21 +24,26 @@ const wet = require('../../assets/tensorModel/weights.bin')
 const TensorView: FC<Props> = ({ route }) => {
   const [model, setModel] = useState<tf.LayersModel>()
 
-  const getModel = useCallback(async () => {
-    try {
-      const loadedModel = await tf.loadLayersModel(bundleResourceIO(json, wet))
-      setModel(loadedModel)
-    } catch (e) {
-      console.log('error to import model the reason: ' + e)
-    }
-  }, [])
+  const getModel = React.useMemo(
+    useCallback(async () => {
+      try {
+        const loadedModel = await tf.loadLayersModel(
+          bundleResourceIO(json, wet)
+        )
+        setModel(loadedModel)
+      } catch (e) {
+        console.log('error to import model the reason: ' + e)
+      }
+    }, []),
+    []
+  )
 
   useEffect(() => {
     console.log('useEffect is running ')
-    getModel()
+    getModel
     model !== undefined
       ? Alert.alert('model is loaded')
-      : Alert.alert('model is undefined')
+      : console.log('model is undefined')
   }, [model])
 
   const onPressed = () => {

@@ -13,8 +13,8 @@ const StyledText = styled.Text`
 // types
 import { TextProps } from './types'
 
-const Regular: FC<TextProps> = (props) => {
+const RegularText: FC<TextProps> = (props) => {
   return <StyledText style={props.textStyles}>{props.children}</StyledText>
 }
 
-export default Regular
+export default RegularText
