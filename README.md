@@ -37,13 +37,13 @@
 ![image](https://user-images.githubusercontent.com/77220824/200266512-bd8e2cee-d518-4372-8ddd-c445212adced.png)
 
 * 사용자의 자세로 부터 분석한 결과를 알려주기 위한 사용자 라이브러리 호출.
-* ![image](https://user-images.githubusercontent.com/77220824/200266602-8045c43e-6cc9-4042-b57e-46ac25ddc362.png)
+![image](https://user-images.githubusercontent.com/77220824/200266602-8045c43e-6cc9-4042-b57e-46ac25ddc362.png)
 
 * 사용자가 사진을 선택하는 장면
 ![image](https://user-images.githubusercontent.com/77220824/200266680-b36e08ef-3c29-4f92-8013-441cb9d189a0.png)
 
 * 불러온 모델을 react native skia에서 지원하는 canvas형식으로 그려둠. (image타입의 경우 이후 tensor model이 요구하는 데이터 전처리를 진행하기 어려워서 애초에 다차원 배열로 그려버리는 방식의 canvas 태그를 사용함.)
-* ![image](https://user-images.githubusercontent.com/77220824/200266746-01bce8ae-2f3c-4f2a-9745-961208a1fa7b.png)
+![image](https://user-images.githubusercontent.com/77220824/200266746-01bce8ae-2f3c-4f2a-9745-961208a1fa7b.png)
 
 ### 3. expo를 활용해 기초 어플 assets에 필요한 데이터 사전 구성하기(fonts, background image... etc),  4. tensorflow 머신 앱에서 연동시키기
 
