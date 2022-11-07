@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React, { FC, useCallback, useMemo, useState, useEffect } from 'react'
 
 import RegularButton from '../components/Buttons/RegularButton'
@@ -6,10 +6,9 @@ import RegularButton from '../components/Buttons/RegularButton'
 import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 
-// import test image
-import image from '../../assets/tensorData/male-activity.jpg'
 // get tensorflow model
 import * as poseDetection from '@tensorflow-models/pose-detection'
+import * as tf from '@tensorflow/tfjs'
 
 export type Props = StackScreenProps<RootStackParamList, 'TensorView'>
 
@@ -25,6 +24,7 @@ const TensorView: FC<Props> = ({ route }) => {
   const getModel = useMemo(
     useCallback(async () => {
       try {
+        await tf.ready()
         console.log('try ...')
         const detector = await poseDetection.createDetector(
           poseDetection.SupportedModels.PoseNet,
@@ -42,7 +42,7 @@ const TensorView: FC<Props> = ({ route }) => {
   )
 
   const onPressed = () => {
-    const pose = model?.estimatePoses(image)
+    // const pose = model?.estimatePoses(image)
   }
 
   return (
@@ -52,8 +52,9 @@ const TensorView: FC<Props> = ({ route }) => {
         btnStyles={styles.button}
         textStyles={styles.text}
         onPress={() => getModel}
-        children={<Text>모델 불러오기</Text>}
-      />
+      >
+        모델 불러오기
+      </RegularButton>
       {model !== undefined && (
         <RegularButton
           btnStyles={styles.button}
