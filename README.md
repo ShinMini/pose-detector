@@ -30,7 +30,7 @@
 
 ### 2. 사용자 library에서 사진 및 비디오 가져오기
 * 원하는 운동 선택
-![select](./images/2dc791f0d51cdc7d08d567470b0ac1d592ad8d53c2ff81efc94666f5e62c6998.png)  
+![select]('images/2dc791f0d51cdc7d08d567470b0ac1d592ad8d53c2ff81efc94666f5e62c6998.png')  
 
 * 선택한 운동에 대한 정보를 알려준뒤.
 ![picture 3](./images/527af74d899a8e59872d38dcd954a1a88e0612ff317b9bbaee9e57992ef86f49.png)  
