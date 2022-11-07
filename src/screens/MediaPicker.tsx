@@ -15,8 +15,6 @@ import ImagePreview from '../components/Media/ImagePreview'
 import VideoPreview from '../components/Media/VideoPreview'
 
 // navigation
-import { useNavigation } from '@react-navigation/native'
-import type { Props as HomeProps } from './Home'
 import CanvasModule from './CanvasModule'
 
 export const MediaPicker: FC<Props> = ({ route }) => {
@@ -28,7 +26,7 @@ export const MediaPicker: FC<Props> = ({ route }) => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
-      aspect: [4, 6],
+      aspect: [6, 4],
       quality: 1,
     })
     if (!result.cancelled) {

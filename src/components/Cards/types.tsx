@@ -1,5 +1,7 @@
 import type { ImageSourcePropType } from 'react-native'
 
+import * as poseDetection from '@tensorflow-models/pose-detection'
+
 export interface CardProps {
   id: number
   accountNo: string
@@ -11,4 +13,5 @@ export interface CardProps {
 
 export interface CardSectionProps {
   data: Array<CardProps>
+  model: poseDetection.PoseDetector
 }

@@ -14,14 +14,18 @@ const ButtonSectionBackground = styled.View`
 // navigation
 import { useNavigation } from '@react-navigation/native'
 import type { Props as HomeProps } from '../../screens/Home'
+import * as poseDetection from '@tensorflow-models/pose-detection'
 
-const ButtonSection: FC = (props) => {
+type BtnProps = {
+  model: poseDetection.PoseDetector
+}
+const ButtonSection: FC<BtnProps> = (props) => {
   // configuring navigation
   const navigation = useNavigation<HomeProps['navigation']>()
 
   // move to balance page
   const handlePress = () => {
-    navigation.navigate('MediaPicker')
+    navigation.navigate('MediaPicker', { model: props.model })
   }
   return (
     <ButtonSectionBackground>

@@ -26,14 +26,15 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // for balance screen
 import { CardProps } from '../components/Cards/types'
+import { BalanceCardProps } from '../components/Balance/types'
 // type about import tensor model from app component
 import * as poseDetection from '@tensorflow-models/pose-detection'
 type NavProps = { model: poseDetection.PoseDetector }
 
 export type RootStackParamList = {
-  Welcome: undefined
-  Home: undefined
-  Balance: CardProps
+  Welcome: NavProps
+  Home: NavProps
+  Balance: BalanceCardProps
   MediaPicker: NavProps
   // CanvasModule: CanvasProps
   NativeView: undefined
@@ -74,6 +75,7 @@ const RootStack: FC<NavProps> = (props) => {
         >
           <Stack.Screen
             name="Welcome"
+            initialParams={{ model: props.model }}
             component={Welcome}
             options={{ headerShown: false }}
           />

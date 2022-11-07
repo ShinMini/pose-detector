@@ -52,12 +52,8 @@ export default function App() {
 
   // font가 로드되지않았거나, model이 로드되지 않은 경우,
   if (!fontsLoaded || !model) {
-    // return <LoadingIndicator size={100} />
-    return (
-      <View>
-        <Text>hi</Text>
-      </View>
-    )
+    return <LoadingIndicator size={100} />
+    // return ( <View> <Text>hi</Text> </View>)
   }
 
   return <RootStack model={model} />

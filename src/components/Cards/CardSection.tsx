@@ -18,10 +18,10 @@ const CardSection: FC<CardSectionProps> = (props) => {
     <CardList
       data={props.data}
       horizontal={true}
-      showHorizontalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
       contentContainerStyle={{ paddingRight: 25, alignItems: 'center' }}
       keyExtractor={({ id }: any) => id.toString()}
-      renderItem={({ item }: any) => <CardItem {...item} />}
+      renderItem={({ item }: any) => <CardItem {...item} model={props.model} />}
     />
   )
 }

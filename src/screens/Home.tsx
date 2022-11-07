@@ -23,13 +23,13 @@ import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 export type Props = StackScreenProps<RootStackParamList, 'Home'>
 
-const Home: FC<Props> = () => {
+const Home: FC<Props> = ({ route }) => {
   const cardsData = Data.cardsData
   const transactionData = Data.workoutData
   return (
     <HomeContainer>
       <StatusBar style="dark" />
-      <CardSection data={cardsData} />
+      <CardSection data={cardsData} model={route.params.model} />
       <TransactionSection data={transactionData} />
     </HomeContainer>
   )

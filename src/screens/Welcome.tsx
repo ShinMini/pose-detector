@@ -40,7 +40,7 @@ import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 export type Props = StackScreenProps<RootStackParamList, 'Welcome'>
 
-const Welcome: FC<Props> = ({ navigation }) => {
+const Welcome: FC<Props> = ({ navigation, route }) => {
   return (
     <>
       <StatusBar style="light" />
@@ -67,7 +67,7 @@ const Welcome: FC<Props> = ({ navigation }) => {
           <RegularButton
             textStyles={{ fontSize: 25 }}
             onPress={() => {
-              navigation.navigate('Home')
+              navigation.navigate('Home', { model: route.params.model })
             }}
           >
             Get Started

@@ -58,13 +58,18 @@ const Logo = styled.Image`
 // types
 import { CardProps } from './types'
 
-const CardItem: FC<CardProps> = (props) => {
+import * as poseDetection from '@tensorflow-models/pose-detection'
+interface CardModelProps extends CardProps {
+  model: poseDetection.PoseDetector
+}
+
+const CardItem: FC<CardModelProps> = (props) => {
   // configuring navigation
   const navigation = useNavigation<HomeProps['navigation']>()
 
   // move to balance page
   const handlePress = () => {
-    navigation.navigate('Balance', { ...props })
+    navigation.navigate('Balance', { ...props, model: props.model })
   }
 
   let color: any = colors.surfaceVariant

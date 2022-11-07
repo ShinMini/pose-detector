@@ -27,7 +27,7 @@ const Balance: FC<Props> = ({ route }) => {
       <StatusBar style="dark" />
       <AmountSection balance={route?.params?.balance} />
       <BalanceCardSection {...route?.params} />
-      <ButtonSection />
+      <ButtonSection model={route.params.model} />
     </BalanceContainer>
   )
 }
