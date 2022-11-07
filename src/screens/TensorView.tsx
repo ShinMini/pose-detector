@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React, { FC, useCallback, useMemo, useState, useEffect } from 'react'
 
 import RegularButton from '../components/Buttons/RegularButton'
@@ -6,9 +6,8 @@ import RegularButton from '../components/Buttons/RegularButton'
 import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 
-// import test image
-import image from '../../assets/tensorData/male-activity.jpg'
 // get tensorflow model
+import * as tf from '@tensorflow/tfjs'
 import * as poseDetection from '@tensorflow-models/pose-detection'
 
 export type Props = StackScreenProps<RootStackParamList, 'TensorView'>
@@ -16,7 +15,7 @@ export type Props = StackScreenProps<RootStackParamList, 'TensorView'>
 const detectorConfig: poseDetection.PosenetModelConfig = {
   architecture: 'ResNet50',
   outputStride: 16,
-  inputResolution: { width: 257, height: 200 },
+  inputResolution: { width: 400, height: 600 },
   quantBytes: 2,
 }
 const TensorView: FC<Props> = ({ route }) => {
@@ -27,6 +26,7 @@ const TensorView: FC<Props> = ({ route }) => {
     useCallback(async () => {
       try {
         console.log('try ... importing model')
+        await tf.ready()
         const detector = await poseDetection.createDetector(
           poseDetection.SupportedModels.PoseNet,
           detectorConfig
@@ -43,26 +43,30 @@ const TensorView: FC<Props> = ({ route }) => {
   )
 
   // mount 될 경우 model 불러오기 실행.
-  React.useEffect(() => {
+  useEffect(() => {
     getModel
-  }, [model])
+  }, [])
 
-  const onPressed = () => {
-    let pose = model?.estimatePoses(image)
+  const runEstimate = () => {
+    // let pose = model?.estimatePoses(image)
+    console.log('runEstimate')
   }
 
+  if (!typeof model) {
+    return (
+      <View>
+        <Text>model을 불러오는 중입니다 ...</Text>
+      </View>
+    )
+  }
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}> 현재 모델 상태: {typeof model}</Text>
-      {model !== undefined && (
-        <RegularButton
-          btnStyles={styles.button}
-          textStyles={styles.text}
-          onPress={onPressed}
-          children={<Text>모델 테스트</Text>}
-        />
-      )}
-    </View>
+    <RegularButton
+      btnStyles={styles.button}
+      textStyles={styles.text}
+      onPress={runEstimate}
+    >
+      모델 테스트
+    </RegularButton>
   )
 }
 

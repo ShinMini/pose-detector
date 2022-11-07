@@ -7,6 +7,7 @@ import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
 import CanvasModule from '../screens/CanvasModule'
+
 import NativeView from '../screens/NativeView'
 import TensorView from '../screens/TensorView'
 
@@ -25,19 +26,15 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // for balance screen
 import { CardProps } from '../components/Cards/types'
-import { ImageInfo } from 'expo-image-picker'
-
-// type CanvasProps = {
-//   imgInfo: ImageInfo
-// }
-
-// for TensorView screen
+// type about import tensor model from app component
+import * as poseDetection from '@tensorflow-models/pose-detection'
+type NavProps = { model: poseDetection.PoseDetector }
 
 export type RootStackParamList = {
   Welcome: undefined
   Home: undefined
   Balance: CardProps
-  MediaPicker: undefined
+  MediaPicker: NavProps
   // CanvasModule: CanvasProps
   NativeView: undefined
   TensorView: undefined
@@ -45,7 +42,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>()
 
-const RootStack: FC = () => {
+const RootStack: FC<NavProps> = (props) => {
   return (
     <>
       <NavigationContainer>
@@ -116,13 +113,10 @@ const RootStack: FC = () => {
           <Stack.Screen
             name="MediaPicker"
             component={MediaPicker}
-            options={{ headerShown: false }}
+            options={({ route }) => ({
+              headerShown: false,
+            })}
           />
-          {/* <Stack.Screen
-            name="CanvasModule"
-            component={CanvasModule}
-            options={({ route }) => ({ headerShown: false })}
-          /> */}
           <Stack.Screen
             name="NativeView"
             component={NativeView}

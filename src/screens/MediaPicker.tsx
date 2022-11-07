@@ -20,9 +20,6 @@ import type { Props as HomeProps } from './Home'
 import CanvasModule from './CanvasModule'
 
 export const MediaPicker: FC<Props> = ({ route }) => {
-  // configuring navigation
-  const navigation = useNavigation<HomeProps['navigation']>()
-
   const [image, setImage] = useState<ImageInfo>()
   const [error, setError] = useState(false)
 
@@ -31,7 +28,7 @@ export const MediaPicker: FC<Props> = ({ route }) => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
-      aspect: [4, 3],
+      aspect: [4, 6],
       quality: 1,
     })
     if (!result.cancelled) {
@@ -51,7 +48,7 @@ export const MediaPicker: FC<Props> = ({ route }) => {
   return image.type === 'image' ?
   // <View onLayout={() => navigation.navigate('TensorView', {pickedImage: image})} /> :
   // <ImagePreview pickedImage={image} error={error} /> :
-  <CanvasModule pickedImage={image} /> :
+  <CanvasModule pickedImage={image} model={route.params.model} error={error}/> :
   <VideoPreview pickedVideo={image}/>
 }
 

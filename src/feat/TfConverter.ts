@@ -1,10 +1,11 @@
 import * as tf from '@tensorflow/tfjs'
+import * as tfCore from '@tensorflow/tfjs-core'
 import * as tfReact from '@tensorflow/tfjs-react-native'
 import * as FileSystem from 'expo-file-system'
 import '@tensorflow/tfjs-react-native'
 
 // export const transformImageToTensor = async (uri: string) => {
-const transformImageToTensor = async (uri: string): Promise<tf.Tensor> => {
+const transformImageToTensor = async (uri: string): Promise<tfCore.Tensor> => {
   await tf.ready()
   const options = { encoding: FileSystem.EncodingType.Base64 }
   console.log('Running Converter !!!!!!!!')
@@ -18,17 +19,16 @@ const transformImageToTensor = async (uri: string): Promise<tf.Tensor> => {
   const scalar = tf.scalar(255)
 
   console.log('imgTensor: ', imgTensor)
-  return imgTensor
-  /*
+  // return imgTensor
+
   //resize the image
-  imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [300, 300])
+  imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [400, 600])
   //normalize; if a normalization layer is in the model, this step can be skipped
   const tensorScaled = imgTensor.div(scalar)
   //final shape of the tensor
-  const img = tf.reshape(tensorScaled, [1, 300, 300, 3])
+  const img = tf.reshape(tensorScaled, [1, 400, 600, 3])
   console.log('img: ', img)
   return img
-  */
 }
 
 export default transformImageToTensor
