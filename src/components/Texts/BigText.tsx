@@ -8,7 +8,7 @@ const StyledText = styled.Text`
   font-size: 37px;
   color: ${colors.white};
   text-align: left;
-  font-family: Lato-Bold;
+  font-family: Lato-Regular;
 `
 // types
 import { TextProps } from './types'

@@ -3,7 +3,17 @@ import { SafeAreaView } from 'react-native'
 import { MotiView } from '@motify/components'
 import RegularText from '../Texts/RegularText'
 
-const LoadingIndicator = ({ size }: { size: number }) => {
+import { SCREEN_HEIGHT } from '../../screens/screenSize'
+
+type LoadProps = {
+  size: number
+  text?: string
+  margin?: number
+}
+const LoadingIndicator = (props: LoadProps) => {
+  let margin = 30
+  if (props.margin) margin += props.margin
+  const TEXT_HEIGHT = SCREEN_HEIGHT / 2 - (props.size + margin)
   return (
     <SafeAreaView
       style={{
@@ -15,20 +25,21 @@ const LoadingIndicator = ({ size }: { size: number }) => {
     >
       <RegularText
         textStyles={{
+          position: 'absolute',
           alignSelf: 'center',
           color: 'white',
           fontSize: 22,
-          paddingBottom: 15,
-          fontFamily: 'DancingScript-Regular',
+          top: TEXT_HEIGHT,
+          left: 100,
         }}
       >
-        Welcome to my app
+        {props.text}
       </RegularText>
       <MotiView
         from={{
-          width: size,
-          height: size,
-          borderRadius: size / 2,
+          width: props.size,
+          height: props.size,
+          borderRadius: props.size / 2,
           borderWidth: 0,
           shadowOpacity: 0.5,
         }}
@@ -37,18 +48,18 @@ const LoadingIndicator = ({ size }: { size: number }) => {
           loop: true,
         }}
         animate={{
-          width: size + 20,
-          height: size + 20,
-          borderRadius: (size + 20) / 2,
-          borderWidth: size / 10,
+          width: props.size + 20,
+          height: props.size + 20,
+          borderRadius: (props.size + 20) / 2,
+          borderWidth: props.size / 10,
           shadowOpacity: 1,
         }}
         style={{
-          width: size,
-          height: size,
+          width: props.size,
+          height: props.size,
           alignSelf: 'center',
-          borderRadius: size / 2,
-          borderWidth: size / 10,
+          borderRadius: props.size / 2,
+          borderWidth: props.size / 10,
           borderColor: 'white',
           shadowColor: 'white',
           shadowOffset: { width: 0, height: 0 },

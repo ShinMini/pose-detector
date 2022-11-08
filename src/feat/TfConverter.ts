@@ -4,11 +4,14 @@ import * as tfReact from '@tensorflow/tfjs-react-native'
 import * as FileSystem from 'expo-file-system'
 import '@tensorflow/tfjs-react-native'
 
-// export const transformImageToTensor = async (uri: string) => {
-const transformImageToTensor = async (uri: string): Promise<tfCore.Tensor> => {
+const options = { encoding: FileSystem.EncodingType.Base64 }
+
+// prettier-ignore
+const transformImageToTensor = async (uri: string, width :number, height:number): Promise<tfCore.Tensor> => {
   await tf.ready()
-  const options = { encoding: FileSystem.EncodingType.Base64 }
-  console.log('Running Converter !!!!!!!!')
+  console.log('\n [Running Converter process] \n')
+  console.log('now width: ', width)
+  console.log('now height: ', height)
 
   // read the image as base64 and create buffer
   const img64 = await FileSystem.readAsStringAsync(uri, options)
@@ -16,19 +19,14 @@ const transformImageToTensor = async (uri: string): Promise<tfCore.Tensor> => {
   const raw = new Uint8Array(imgBuffer)
 
   let imgTensor = tfReact.decodeJpeg(raw)
-  const scalar = tf.scalar(255)
-
-  console.log('imgTensor: ', imgTensor)
-  // return imgTensor
 
   //resize the image
-  imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [400, 600])
-  //normalize; if a normalization layer is in the model, this step can be skipped
-  const tensorScaled = imgTensor.div(scalar)
-  //final shape of the tensor
-  const img = tf.reshape(tensorScaled, [1, 400, 600, 3])
-  console.log('img: ', img)
-  return img
+  console.log('before imgTensor: ', imgTensor)
+
+  imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [width, height])
+
+  console.log('after imgTensor: ', imgTensor)
+  return imgTensor
 }
 
 export default transformImageToTensor
