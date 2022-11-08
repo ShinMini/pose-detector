@@ -1,4 +1,4 @@
-package doit.expo.shinmini.newarchitecture.components;
+package playdata.expo.shinmini.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

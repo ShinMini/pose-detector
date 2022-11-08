@@ -18,17 +18,20 @@ const transformImageToTensor = async (uri: string): Promise<tfCore.Tensor> => {
   let imgTensor = tfReact.decodeJpeg(raw)
   const scalar = tf.scalar(255)
 
-  console.log('imgTensor: ', imgTensor)
-  // return imgTensor
-
   //resize the image
+  console.table('before reshape imgTensor: ', imgTensor)
   imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [400, 600])
+  console.table('after reshape imgTensor: ', imgTensor)
+
+  return imgTensor
+  /* 
   //normalize; if a normalization layer is in the model, this step can be skipped
   const tensorScaled = imgTensor.div(scalar)
   //final shape of the tensor
   const img = tf.reshape(tensorScaled, [1, 400, 600, 3])
   console.log('img: ', img)
   return img
+  */
 }
 
 export default transformImageToTensor

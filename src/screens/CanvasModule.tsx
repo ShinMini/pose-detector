@@ -18,14 +18,16 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { ImgProps } from '../components/Media/types'
 import * as poseDetection from '@tensorflow-models/pose-detection'
 import * as tf from '@tensorflow/tfjs'
+import LoadingIndicator from '../components/Loading/LoadingView'
 
 interface CanvasProps extends ImgProps {
   model: poseDetection.PoseDetector
 }
-const ScreenWidth = Dimensions.get('screen').width
-const ScreenHeight = Dimensions.get('screen').width
-const xSize = (ScreenWidth - ScreenWidth * 0.9) / 2
-const ySize = (ScreenHeight - ScreenHeight * 0.9) / 2
+/** set variable of screen & canvas size */
+const SCREEN_WIDTH = Dimensions.get('screen').width
+const SCREEN_HEIGHT = Dimensions.get('screen').height
+const CANVAS_X = (SCREEN_WIDTH - SCREEN_WIDTH * 0.9) / 2
+const CANVAS_Y = (SCREEN_HEIGHT - SCREEN_HEIGHT * 0.9) / 2
 
 const BTN_MARGIN = 30
 const IMG_RATIO = 0.9
@@ -80,6 +82,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
   if (convertProcessing === ProcessProps.processing)
     return (
       <SafeAreaView style={styles.safeAreaView}>
+        <LoadingIndicator size={100} />
         <RegularText textStyles={styles.regularText}>
           이미지 프로세싱 중입니다 ...
         </RegularText>
@@ -91,7 +94,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
     return (
       <SafeAreaView style={styles.safeAreaView}>
         <RegularText textStyles={styles.regularText}>
-          이미지 프로세싱이 완료되었습니다 !
+          이미지 프로세싱이 완료되었습니다 :)
         </RegularText>
         {imageProcessed !== undefined && (
           <RegularButton
@@ -113,10 +116,10 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
           <Image
             image={image}
             fit="contain"
-            x={xSize}
-            y={ySize}
-            width={ScreenWidth * IMG_RATIO}
-            height={(ScreenHeight - BTN_MARGIN) * IMG_RATIO}
+            x={CANVAS_X}
+            y={CANVAS_Y}
+            width={SCREEN_WIDTH * IMG_RATIO}
+            height={(SCREEN_HEIGHT - BTN_MARGIN) * IMG_RATIO}
           />
         )}
       </Canvas>
@@ -144,7 +147,7 @@ const styles = StyleSheet.create({
   btnView: {
     backgroundColor: Colors.amber400,
     marginBottom: BTN_MARGIN,
-    width: ScreenWidth * IMG_RATIO,
+    width: SCREEN_WIDTH * IMG_RATIO,
     alignSelf: 'center',
   },
   btnText: {

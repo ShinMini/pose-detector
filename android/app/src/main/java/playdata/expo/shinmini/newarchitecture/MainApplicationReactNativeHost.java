@@ -1,4 +1,4 @@
-package doit.expo.shinmini.newarchitecture;
+package playdata.expo.shinmini.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import doit.expo.shinmini.BuildConfig;
-import doit.expo.shinmini.newarchitecture.components.MainComponentsRegistry;
-import doit.expo.shinmini.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import playdata.expo.shinmini.BuildConfig;
+import playdata.expo.shinmini.newarchitecture.components.MainComponentsRegistry;
+import playdata.expo.shinmini.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

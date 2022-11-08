@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "1017-expo",
-    "slug": "1017-expo",
-    "version": "1.0.0",
+    "name": "health-care-app",
+    "slug": "health-care-app",
+    "version": "1.2.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icons/shoulderPress.png",
     "userInterfaceStyle": "light",
     "plugins": [
       [
@@ -24,28 +24,19 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "doit.expo.shinmini"
+      "bundleIdentifier": "playdata.expo.shinmini"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "doit.expo.shinmini",
-      "permissions": [
-        "android.permission.RECORD_AUDIO"
-      ]
+      "package": "playdata.expo.shinmini",
+      "permissions": ["android.permission.RECORD_AUDIO"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "bfb3b27c-fb69-467b-b099-4e95d8f61cf5"
-      }
-    }
+    "assetBundlePatterns": ["**/*"]
   }
 }

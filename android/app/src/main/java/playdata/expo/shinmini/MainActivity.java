@@ -1,4 +1,4 @@
-package doit.expo.shinmini;
+package playdata.expo.shinmini;
 
 import android.os.Build;
 import android.os.Bundle;

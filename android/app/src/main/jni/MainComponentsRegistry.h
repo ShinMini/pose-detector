@@ -13,7 +13,7 @@ class MainComponentsRegistry
  public:
   // Adapt it to the package you used for your Java class.
   constexpr static auto kJavaDescriptor =
-      "Ldoit/expo/shinmini/newarchitecture/components/MainComponentsRegistry;";
+      "Lplaydata/expo/shinmini/newarchitecture/components/MainComponentsRegistry;";
 
   static void registerNatives();
 
