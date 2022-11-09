@@ -19,7 +19,6 @@ const CardBackground = styled.ImageBackground`
   height: 75%;
   width: ${ScreenWidth * 0.67}px;
   resize-mode: cover;
-  background-color: ${colors.tertiaryContainer};
   border-radius: 25px;
   margin-right: 25px;
   overflow: hidden;
@@ -72,10 +71,10 @@ const CardItem: FC<CardModelProps> = (props) => {
     navigation.navigate('Balance', { ...props, model: props.model })
   }
 
-  let color: any = colors.surfaceVariant
-  if (props.cardColor !== colors.surfaceVariant) color = props.cardColor
+  let color = Colors.amber100
+  if (props.cardColor) color = props.cardColor
   return (
-    <CardBackground>
+    <CardBackground style={{ backgroundColor: color }}>
       <CardTouchable underlayColor={colors.secondary} onPress={handlePress}>
         <TouchableView>
           <Logo source={props.logo} />
@@ -103,7 +102,7 @@ const CardItem: FC<CardModelProps> = (props) => {
               <SmallText
                 textStyles={{
                   marginTop: 5,
-                  color: colors.yellow,
+                  color: Colors.grey700,
                   fontSize: 15,
                 }}
               >

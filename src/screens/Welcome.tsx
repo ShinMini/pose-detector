@@ -20,16 +20,17 @@ const WelcomeContainer = styled(Container)`
 const TopSection = styled.View`
   width: 100%;
   flex: 1;
-  max-height: 55%;
+  max-height: 45%;
 `
 const TopImage = styled.Image`
   width: 100%;
-  height: 100%;
+  height: 95%;
   resize-mode: cover;
 `
 const BottomSection = styled.View`
   width: 100%;
   padding: 25px;
+  padding-top: 0;
   flex: 1;
 `
 // image
@@ -65,20 +66,21 @@ const Welcome: FC<Props> = ({ navigation, route }) => {
             analysis using machine learning!
           </SmallText>
           <RegularButton
-            textStyles={{ fontSize: 25 }}
+            textStyles={{ fontSize: 20 }}
             onPress={() => {
               navigation.navigate('Home', { model: route.params.model })
             }}
           >
-            Get Started
+            기본 페이지
           </RegularButton>
           <RegularButton
-            textStyles={{ fontSize: 25 }}
+            btnStyles={{ marginBottom: 15 }}
+            textStyles={{ fontSize: 20 }}
             onPress={() => {
               navigation.navigate('NativeView')
             }}
           >
-            go to test view
+           몸무게 차트 분석
           </RegularButton>
         </BottomSection>
       </WelcomeContainer>

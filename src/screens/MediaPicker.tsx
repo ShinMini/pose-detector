@@ -9,9 +9,9 @@ import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 
 export type Props = StackScreenProps<RootStackParamList, 'MediaPicker'>
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from './screenSize'
 
 // user component
-import ImagePreview from '../components/Media/ImagePreview'
 import VideoPreview from '../components/Media/VideoPreview'
 
 // navigation
@@ -26,8 +26,8 @@ export const MediaPicker: FC<Props> = ({ route }) => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
-      aspect: [6, 4],
-      quality: 1,
+      assets: [4, 6],
+      quality: 0.4,
     })
     if (!result.cancelled) {
       setImage(result)

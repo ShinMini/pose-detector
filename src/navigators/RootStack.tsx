@@ -27,8 +27,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 // for balance screen
 import { CardProps } from '../components/Cards/types'
 import { BalanceCardProps } from '../components/Balance/types'
+import { Wallet } from '../test/Skia'
+
 // type about import tensor model from app component
 import * as poseDetection from '@tensorflow-models/pose-detection'
+import { Colors } from 'react-native-paper'
 type NavProps = { model: poseDetection.PoseDetector }
 
 export type RootStackParamList = {
@@ -39,6 +42,7 @@ export type RootStackParamList = {
   // CanvasModule: CanvasProps
   NativeView: undefined
   TensorView: undefined
+  Wallet: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
@@ -50,14 +54,14 @@ const RootStack: FC<NavProps> = (props) => {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: colors.grayLight,
+              backgroundColor: Colors.grey900,
               borderBottomWidth: 0,
               shadowColor: 'transparent',
               shadowOpacity: 0,
               elevation: 0,
               height: 120,
             },
-            headerTintColor: colors.secondary,
+            headerTintColor: Colors.white,
             headerLeftContainerStyle: {
               paddingLeft: 10,
             },
@@ -67,7 +71,7 @@ const RootStack: FC<NavProps> = (props) => {
             headerRight: () => (
               <Profile
                 img={Avi}
-                imgContainerStyle={{ backgroundColor: colors.tertiary }}
+                imgContainerStyle={{ backgroundColor: Colors.grey200 }}
               />
             ),
           }}
@@ -90,7 +94,10 @@ const RootStack: FC<NavProps> = (props) => {
                   {...props}
                 />
               ),
-              headerLeft: () => <></>,
+              headerBackImage: () => (
+                <Ionicons name="chevron-back" size={25} color={colors.white} />
+              ),
+              headerBackTitleVisible: false,
             }}
           />
           <Stack.Screen
@@ -127,6 +134,11 @@ const RootStack: FC<NavProps> = (props) => {
           <Stack.Screen
             name="TensorView"
             component={TensorView}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Wallet"
+            component={Wallet}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useCallback, useState } from 'react'
 import { useFonts, loadAsync } from 'expo-font'
-import 'react-native'
+import { SafeAreaView, Text } from 'react-native'
 
 import LoadingIndicator from './src/components/Loading/LoadingView'
 // import AppLoading from 'expo-app-loading'

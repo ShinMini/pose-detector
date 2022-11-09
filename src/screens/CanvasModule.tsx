@@ -4,7 +4,9 @@ import RegularText from '../components/Texts/RegularText'
 // import image to tensor converter
 import TfConverter from '../feat/TfConverter'
 // Canvas
-import { Canvas, Image, useImage } from '@shopify/react-native-skia'
+// prettier-ignore
+import { Canvas, center, Circle, Group, Image, Rect, useImage,
+} from '@shopify/react-native-skia'
 import { Alert, Dimensions, StyleSheet } from 'react-native'
 // import styling tools
 import { Colors } from 'react-native-paper'
@@ -17,8 +19,8 @@ import LoadingIndicator from '../components/Loading/LoadingView'
 
 /** constance variable */
 // prettier-ignore
-import { BTN_MARGIN, IMG_RATIO, SCREEN_WIDTH, X_Size, Y_Size, CANVAS_HEIGHT, CANVAS_WIDTH, } from './screenSize'
-import separator from '../test/seperator';
+import { BTN_MARGIN, IMG_RATIO, SCREEN_WIDTH, X_SIZE, Y_SIZE, CANVAS_HEIGHT, CANVAS_WIDTH, CIRCLE_MARGIN_HEIGHT, CIRCLE_MARGIN_WIDTH } from './screenSize'
+import ViewStyles from '../styles/View.style'
 
 interface CanvasProps extends ImgProps {
   model: poseDetection.PoseDetector
@@ -35,14 +37,17 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
 
   // prettier-ignore
   const [imageProcessed, setImageProcessed] = React.useState<tf.Tensor<tf.Rank>>()
-  const [convertProcessing, setConvertProcessing] =
-    React.useState<ProcessProps>(ProcessProps.init)
+  // prettier-ignore
+  const [convertProcessing, setConvertProcessing] = React.useState<ProcessProps>(ProcessProps.init)
+  // prettier-ignore
+  const [modelProcessing, setModelProcessing] = React.useState<ProcessProps>( ProcessProps.init)
+  const [circles, setCircles] = React.useState<JSX.Element[]>([])
 
   // prettier-ignore
   if (props.error)
     return (
        <SafeAreaView style={styles.safeAreaView}>
-        <RegularText textStyles={styles.regularText}> 에러가 발생했어요 TOT...{' '} </RegularText>
+        <RegularText textStyles={styles.regularText}> 에러가 발생했어요 TOT... </RegularText>
       </SafeAreaView>
       )
 
@@ -61,13 +66,59 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
       Alert.alert('done img processing :) ')
     })
   }
+
   // 모델로 이미지 예측
   const runEstimate = async (imgProcessed: any) => {
+    setModelProcessing(ProcessProps.processing)
     const pose = await model.estimatePoses(imgProcessed)
-    console.log('the result of estimated Pose by model: ', pose)
+    console.log('canvas width: ', CANVAS_WIDTH)
+    console.log('canvas width: ', CANVAS_HEIGHT)
+
     pose.map((arr) => {
-      separator(arr.keypoints).then()
+      arr.keypoints.map((keypoint, index) => {
+        console.log('name: ', keypoint.name)
+        console.log('x: ', keypoint.x * 0.85 + CIRCLE_MARGIN_WIDTH)
+        console.log('y: ', keypoint.y * 1.2 + CIRCLE_MARGIN_HEIGHT)
+
+        if (keypoint.name) {
+          if (
+            makeCircles(keypoint.name, keypoint.x, keypoint.y, index) !==
+            undefined
+          ) {
+            setCircles((circles) => [
+              ...circles,
+              makeCircles(
+                keypoint.name,
+                keypoint.x * 0.85 + CIRCLE_MARGIN_WIDTH,
+                keypoint.y * 1.15 + CIRCLE_MARGIN_HEIGHT,
+                // keypoint.x,
+                // keypoint.y,
+                index
+              ),
+            ])
+          }
+        }
+      })
     })
+    setModelProcessing(ProcessProps.done)
+  }
+
+  const makeCircles = (
+    name: string | undefined,
+    x: number,
+    y: number,
+    index: number
+  ) => {
+    return (
+      <Circle
+        ViewStyles={{ zIndex: 10 }}
+        key={index.toString()}
+        Label={name}
+        color="red"
+        c={{ x, y }}
+        r={2}
+      />
+    )
   }
 
   // prettier-ignore
@@ -83,13 +134,22 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
       <Canvas style={{ flex: 1, marginBottom: BTN_MARGIN}}>
         {image && (
           <Image
+            ViewStyles={{zIndex: 1}}
+            opacity={0.5}
             image={image}
             fit="contain"
-            x={X_Size}
-            y={Y_Size}
+            x={X_SIZE}
+            y={Y_SIZE}
             width={CANVAS_WIDTH}
             height={CANVAS_HEIGHT}
-          />)}
+          >
+      {(modelProcessing === ProcessProps.done) &&
+      (
+        <Group ViewStyles={{zIndex: 10}} transform={[{rotate: 0}]} width={CANVAS_WIDTH} height={CANVAS_HEIGHT}>
+          { circles.map((circle) => { return circle }) }
+        </Group>
+      )}
+          </Image>)}
       </Canvas>
 
       {convertProcessing == ProcessProps.init && (
@@ -102,11 +162,18 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
           <RegularText textStyles={styles.btnText}> 모델 테스트 </RegularText>
         </RegularButton>
       )}
+       
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
+  absoluteCanvas: {
+    position: 'absolute',
+    height: CANVAS_HEIGHT,
+    width: CANVAS_WIDTH,
+    backgroundColor: Colors.green100,
+  },
   safeAreaView: {
     flex: 1,
     backgroundColor: Colors.black,

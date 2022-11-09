@@ -20,7 +20,7 @@ type BodyFactor = {
 
 // const sampleObject: KeyPointsProps = JSON.parse(exJSON)
 
-function make_part(part_name: Keypoint, part_info: Keypoint): Keypoint{
+function make_part(part_name: Keypoint, part_info: Keypoint): Keypoint {
   part_name.score = part_info.score
   part_name.x = part_info.x
   part_name.y = part_info.y
@@ -29,24 +29,30 @@ function make_part(part_name: Keypoint, part_info: Keypoint): Keypoint{
 }
 
 export const separator = async (estimatedPose: Keypoint[]) => {
-  //prettier-ignore
-  let body_part: Keypoint[] = []
   let [
     nose,
-    left_eye, right_eye,
-    left_ear, right_ear,
-    left_shoulder, right_shoulder,
-    left_elbow, right_elbow,
-    left_wrist, right_wrist,
-    left_hip, right_hip,
-    left_knee, right_knee,
-    left_ankle, right_ankle,
+    left_eye,
+    right_eye,
+    left_ear,
+    right_ear,
+    left_shoulder,
+    right_shoulder,
+    left_elbow,
+    right_elbow,
+    left_wrist,
+    right_wrist,
+    left_hip,
+    right_hip,
+    left_knee,
+    right_knee,
+    left_ankle,
+    right_ankle,
   ]: Keypoint[] = []
 
   await estimatedPose.map((keypoint) => {
     switch (keypoint.name) {
       case 'nose':
-        body_part.push(make_part(nose, keypoint))
+        make_part(nose, keypoint)
         break
       case 'left_ear':
         make_part(left_ear, keypoint)
@@ -98,6 +104,24 @@ export const separator = async (estimatedPose: Keypoint[]) => {
         break
     }
   })
+  return [
+    nose,
+    left_eye,
+    right_eye,
+    left_ear,
+    right_ear,
+    left_shoulder,
+    right_shoulder,
+    left_elbow,
+    right_elbow,
+    left_wrist,
+    right_wrist,
+    left_hip,
+    right_hip,
+    left_knee,
+    right_knee,
+    left_ankle,
+    right_ankle,
+  ]
 }
-
 export default separator

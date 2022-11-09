@@ -14,6 +14,7 @@ const BalanceBackground = styled.ImageBackground`
   background-color: ${colors.accent};
   border-radius: 25px;
   overflow: hidden;
+  opacity: 0.7;
 `
 const BalanceTouchable = styled.TouchableHighlight`
   height: 100%;
@@ -26,19 +27,19 @@ const TouchableView = styled.View`
   flex: 1;
 `
 const BalanceRow = styled.View`
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-`
-const Logo = styled.Image`
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 100%;
   height: 80%;
-  resize-mode: contain;
-  flex: 1;
+  background-color: ${Colors.grey900};
+  padding: 15px;
+  border-radius: 15px;
 `
 // types
 import { BalanceCardProps } from './types'
 import babel from '../../../assets/workout/babel.jpg'
+import BigText from '../Texts/BigText'
+import { Colors } from 'react-native-paper'
 
 const BalanceItem: FC<BalanceCardProps> = (props) => {
   return (
@@ -46,13 +47,17 @@ const BalanceItem: FC<BalanceCardProps> = (props) => {
       <BalanceTouchable underlayColor={colors.secondary}>
         <TouchableView>
           <BalanceRow>
-            <RegularText>
-              {props.accountNo} 기본 동작에 대해 설명하는 세션
+            <BigText textStyles={{ color: Colors.grey100 }}>
+              {props.accountNo}
+            </BigText>
+            <RegularText
+              textStyles={{ color: Colors.grey300, textAlign: 'left' }}
+            >
+              {props.balance}
             </RegularText>
-          </BalanceRow>
-          <RegularText>버튼 클릭시 카메라 라이브러리 호출 예정</RegularText>
-          <BalanceRow>
-            <SmallText>부가 설명 글 삽입 예정</SmallText>
+            <SmallText textStyles={{ color: Colors.grey400 }}>
+              {props.alias}
+            </SmallText>
           </BalanceRow>
         </TouchableView>
       </BalanceTouchable>

@@ -29,11 +29,14 @@ const WorkoutList = styled.FlatList`
 // types
 import { WorkoutSectionProps } from './types'
 import { Ionicons } from '@expo/vector-icons'
+import { Colors } from 'react-native-paper'
 
 const WorkoutSection: FC<WorkoutSectionProps> = (props) => {
   return (
     <WorkoutSectionBackground>
-      <WorkoutRow style={{ marginBottom: 25, backgroundColor: colors.gray }}>
+      <WorkoutRow
+        style={{ marginBottom: 15, backgroundColor: Colors.grey400}}
+      >
         <RegularText textStyles={{ fontSize: 19, color: colors.secondary }}>
           운동 기록
         </RegularText>

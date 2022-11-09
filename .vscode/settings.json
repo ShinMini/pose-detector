@@ -1,4 +1,4 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
-  "cSpell.words": ["Posenet", "tfjs"]
+  "cSpell.words": ["keypoint", "keypoints", "Posenet", "tfjs"]
 }

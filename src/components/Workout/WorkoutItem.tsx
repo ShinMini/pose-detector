@@ -14,7 +14,11 @@ const WorkoutRow = styled.View`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+
+  background-color: ${Colors.grey200};
+  padding: 15px;
+  border-radius: 15;
 `
 const LeftView = styled.View`
   flex-direction: row;
@@ -29,10 +33,9 @@ const RightView = styled.View`
 
 // types
 import { WorkoutProps } from './types'
+import { Colors } from 'react-native-paper'
 
 const WorkoutItem: FC<WorkoutProps> = (props) => {
-  // configuring navigation
-  // const navigation = useNavigation<HomeProps['navigation']>();
 
   return (
     <WorkoutRow>

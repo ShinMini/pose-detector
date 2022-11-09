@@ -22,7 +22,7 @@ const NativeView: FC<Props> = ({ navigation }) => {
         textStyles={{ fontSize: 25, color: 'white' }}
         btnStyles={{ backgroundColor: Colors.indigo500, width: 250 }}
         onPress={() => {
-          navigation.navigate('TensorView')
+          navigation.navigate('Wallet')
         }}
       >
         go to test view

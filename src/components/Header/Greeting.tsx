@@ -7,6 +7,7 @@ import type { StyleProp, TextStyle } from 'react-native'
 import { colors } from '../colors'
 import SmallText from '../Texts/SmallText'
 import RegularText from '../Texts/RegularText'
+import { Colors } from 'react-native-paper'
 
 const StyledView = styled.View`
   flex-direction: column;
@@ -31,7 +32,7 @@ const Greeting: FC<GreetingProps> = (props) => {
       <RegularText
         textStyles={[
           {
-            color: colors.secondary,
+            color: Colors.grey100,
             fontSize: 22,
           },
           props.mainTextStyles,
@@ -42,7 +43,7 @@ const Greeting: FC<GreetingProps> = (props) => {
       <SmallText
         textStyles={[
           {
-            color: colors.grayDark,
+            color: Colors.grey400,
           },
           props.subTextStyles,
         ]}

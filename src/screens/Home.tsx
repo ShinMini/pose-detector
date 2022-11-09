@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar'
 import styled from 'styled-components/native'
 
 // custom components
-import { colors } from '../components/colors'
+import { Colors } from 'react-native-paper'
 import { Container } from '../components/shared'
 import CardSection from '../components/Cards/CardSection'
 import TransactionSection from '../components/Workout/WorkoutSection'
@@ -13,7 +13,7 @@ import TransactionSection from '../components/Workout/WorkoutSection'
 import * as Data from '../../assets/datas'
 
 const HomeContainer = styled(Container)`
-  background-color: ${colors.grayLight};
+  background-color: ${Colors.lightGreen200};
   width: 100%;
   flex: 1;
 `
