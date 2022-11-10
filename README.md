@@ -2,6 +2,10 @@
 
 ## DETAIL [Notion.link](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
 
+<br/>
+<br/>
+
+
 ## GOAL
 1. react native를 사용한 mobile app 만들기
 2. expo를 활용해, ios, android 모두 호환 가능한 앱 만들기
