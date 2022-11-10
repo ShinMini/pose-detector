@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react'
 import type { FC } from 'react'
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
 import type { ImageInfo } from 'expo-image-picker'
 
@@ -9,8 +9,6 @@ import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
 
 export type Props = StackScreenProps<RootStackParamList, 'MediaPicker'>
-import { CANVAS_WIDTH, CANVAS_HEIGHT } from './screenSize'
-
 // user component
 import VideoPreview from '../components/Media/VideoPreview'
 

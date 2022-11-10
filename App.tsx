@@ -13,7 +13,7 @@ import '@tensorflow/tfjs-react-native'
 
 /** constance variable */
 // prettier-ignore
-import {  CANVAS_HEIGHT, CANVAS_WIDTH } from './src/screens/screenSize'
+import {  CANVAS_HEIGHT, CANVAS_WIDTH } from './src/feat/screenSize'
 
 const detectorConfig: poseDetection.PosenetModelConfig = {
   architecture: 'ResNet50',

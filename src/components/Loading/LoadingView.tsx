@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native'
 import { MotiView } from '@motify/components'
 import RegularText from '../Texts/RegularText'
 
-import { SCREEN_HEIGHT } from '../../screens/screenSize'
+import { SCREEN_HEIGHT } from '../../feat/screenSize'
 
 type LoadProps = {
   size: number

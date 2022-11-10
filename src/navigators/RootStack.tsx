@@ -6,10 +6,8 @@ import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
-import CanvasModule from '../screens/CanvasModule'
 
 import NativeView from '../screens/NativeView'
-import TensorView from '../screens/TensorView'
 
 // custom components
 import { colors } from '../components/colors'
@@ -25,7 +23,6 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // for balance screen
-import { CardProps } from '../components/Cards/types'
 import { BalanceCardProps } from '../components/Balance/types'
 import { Wallet } from '../test/Skia'
 
@@ -39,14 +36,11 @@ export type RootStackParamList = {
   Home: NavProps
   Balance: BalanceCardProps
   MediaPicker: NavProps
-  // CanvasModule: CanvasProps
   NativeView: undefined
-  TensorView: undefined
   Wallet: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
-
 const RootStack: FC<NavProps> = (props) => {
   return (
     <>
@@ -129,11 +123,6 @@ const RootStack: FC<NavProps> = (props) => {
           <Stack.Screen
             name="NativeView"
             component={NativeView}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="TensorView"
-            component={TensorView}
             options={{ headerShown: false }}
           />
           <Stack.Screen

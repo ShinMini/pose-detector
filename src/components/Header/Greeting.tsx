@@ -4,7 +4,6 @@ import styled from 'styled-components/native'
 import type { StyleProp, TextStyle } from 'react-native'
 
 // custom components
-import { colors } from '../colors'
 import SmallText from '../Texts/SmallText'
 import RegularText from '../Texts/RegularText'
 import { Colors } from 'react-native-paper'
