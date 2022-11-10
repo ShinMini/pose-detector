@@ -1,5 +1,5 @@
 # NOTION LINK
-[project summary]('https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723')
+[project summary](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
 
 ## Project subject
 1. react native를 사용한 mobile app 만들기
