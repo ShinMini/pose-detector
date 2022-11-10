@@ -5,12 +5,10 @@ module.exports = {
    },
    assets: [
       "./assets",
+      "./assets/avi",
       "./assets/bgs",
       "./assets/fonts",
-      "./assets/images",
       "./assets/icons",
-      "./assets/tensorData",
-      "./assets/tensorModel",
       "./assets/workout"
    ]
 }
