@@ -10,8 +10,6 @@ const options = { encoding: FileSystem.EncodingType.Base64 }
 const transformImageToTensor = async (uri: string, width :number, height:number): Promise<tfCore.Tensor> => {
   await tf.ready()
   console.log('\n [Running Converter process] \n')
-  console.log('convert width to: ', width)
-  console.log('convert height to: ', height)
 
   // read the image as base64 and create buffer
   const img64 = await FileSystem.readAsStringAsync(uri, options)
@@ -21,9 +19,8 @@ const transformImageToTensor = async (uri: string, width :number, height:number)
   let imgTensor = tfReact.decodeJpeg(raw)
 
   //resize the image
-
-  imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [width, height])
-  return imgTensor
+  const img = tf.image.resizeNearestNeighbor(imgTensor, [width, height])
+  return img
 }
 
 export default transformImageToTensor

@@ -68,7 +68,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
       setImageProcessed(t_image)
       setConvertProcessing(ProcessProps.done)
 
-      Alert.alert('Success To Convert :) ')
+      Alert.alert('이미지 변환 완료 ! ')
     })
   }
 
@@ -78,34 +78,24 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
     const pose = await model.estimatePoses(imgProcessed)
     pose.map((arr) => {
       arr.keypoints.map((keypoint, index) => {
+        console.log(keypoint.name, keypoint.x, keypoint.y)
         if (keypoint.name) {
-          if (
-            makeCircles(keypoint.name, keypoint.x, keypoint.y, index) !==
-            undefined
-          ) {
-            setCircles((circles) => [
-              ...circles,
-              makeCircles(
-                keypoint.name,
-                keypoint.x * 0.85 + CIRCLE_MARGIN_WIDTH,
-                keypoint.y * 1.15 + CIRCLE_MARGIN_HEIGHT,
-                index
-              ),
-            ])
-          }
+          setCircles((circles) => [
+            ...circles,
+            makeCircles(
+              keypoint.x * 0.85 + CIRCLE_MARGIN_WIDTH,
+              keypoint.y * 1.15 + CIRCLE_MARGIN_HEIGHT,
+              index
+            ),
+          ])
         }
       })
     })
     setModelProcessing(ProcessProps.done)
   }
 
-  const makeCircles = (
-    name: string | undefined,
-    x: number,
-    y: number,
-    index: number
-  ) => {
-    return <Circle key={index.toString()} color="red" c={{ x, y }} r={2} />
+  const makeCircles = (x: number, y: number, index: number) => {
+    return <Circle key={index.toString()} color="red" cx={x} cy={y} r={3} />
   }
 
   if (convertProcessing === ProcessProps.processing)
@@ -123,23 +113,19 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
       <Canvas style={{ flex: 1, marginBottom: BTN_MARGIN }}>
         {image && (
           <Image
-            opacity={0.5}
+            opacity={0.9}
             image={image}
             fit="contain"
             x={X_SIZE}
             y={Y_SIZE}
             width={CANVAS_WIDTH}
             height={CANVAS_HEIGHT}
-          >
-            {modelProcessing === ProcessProps.done && (
-              <Group transform={[{ rotate: 0 }]}>
-                {circles.map((circle) => {
-                  return circle
-                })}
-              </Group>
-            )}
-          </Image>
+          ></Image>
         )}
+        {modelProcessing === ProcessProps.done &&
+          circles.map((circle) => {
+            return circle
+          })}
       </Canvas>
 
       {convertProcessing == ProcessProps.init && (
