@@ -6,9 +6,6 @@ import {  SafeAreaView, StyleSheet, } from 'react-native'
 // user Component
 import RegularButton from '../components/Buttons/RegularButton'
 
-// screen components
-import TensorView from './TensorView'
-
 // config navigator
 import { RootStackParamList } from '../navigators/RootStack'
 import { StackScreenProps } from '@react-navigation/stack'
