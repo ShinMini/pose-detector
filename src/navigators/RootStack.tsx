@@ -6,7 +6,7 @@ import Welcome from '../screens/Welcome'
 import Home from '../screens/Home'
 import Balance from '../screens/Balance'
 import MediaPicker from '../screens/MediaPicker'
-
+import CanvasAnimation from '../screens/CanvasAnimatedView'
 import NativeView from '../screens/NativeView'
 
 // custom components
@@ -38,6 +38,7 @@ export type RootStackParamList = {
   MediaPicker: NavProps
   NativeView: undefined
   Wallet: undefined
+  CanvasAnimation: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>()
@@ -128,6 +129,11 @@ const RootStack: FC<NavProps> = (props) => {
           <Stack.Screen
             name="Wallet"
             component={Wallet}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CanvasAnimation"
+            component={CanvasAnimation}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

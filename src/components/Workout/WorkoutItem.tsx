@@ -18,7 +18,7 @@ const WorkoutRow = styled.View`
 
   background-color: ${Colors.grey200};
   padding: 15px;
-  border-radius: 15;
+  border-radius: 15px;
 `
 const LeftView = styled.View`
   flex-direction: row;
@@ -36,7 +36,6 @@ import { WorkoutProps } from './types'
 import { Colors } from 'react-native-paper'
 
 const WorkoutItem: FC<WorkoutProps> = (props) => {
-
   return (
     <WorkoutRow>
       <LeftView>

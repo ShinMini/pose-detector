@@ -24,8 +24,8 @@ export const MediaPicker: FC<Props> = ({ route }) => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
-      assets: [4, 6],
-      quality: 0.4,
+      assets: [4, 4],
+      quality: 0.2,
     })
     if (!result.cancelled) {
       setImage(result)

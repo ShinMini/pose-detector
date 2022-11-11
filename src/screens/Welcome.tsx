@@ -80,7 +80,7 @@ const Welcome: FC<Props> = ({ navigation, route }) => {
               navigation.navigate('NativeView')
             }}
           >
-           몸무게 차트 분석
+            lab
           </RegularButton>
         </BottomSection>
       </WelcomeContainer>

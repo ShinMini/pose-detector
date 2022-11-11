@@ -21,10 +21,19 @@ const NativeView: FC<Props> = ({ navigation }) => {
         textStyles={NativeStyles.text}
         btnStyles={NativeStyles.button}
         onPress={() => {
+          navigation.navigate('CanvasAnimation')
+        }}
+      >
+        애니메이션 기능
+      </RegularButton>
+      <RegularButton
+        textStyles={NativeStyles.text}
+        btnStyles={NativeStyles.button}
+        onPress={() => {
           navigation.navigate('Wallet')
         }}
       >
-        go to test view
+        몸무게 차트 분석
       </RegularButton>
     </SafeAreaView>
   )

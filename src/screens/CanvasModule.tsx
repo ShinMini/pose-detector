@@ -68,7 +68,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
       setImageProcessed(t_image)
       setConvertProcessing(ProcessProps.done)
 
-      Alert.alert('done img processing :) ')
+      Alert.alert('Success To Convert :) ')
     })
   }
 
@@ -148,8 +148,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
           btnStyles={CanvasStyles.btnView}
         >
           <RegularText textStyles={CanvasStyles.btnText}>
-            {' '}
-            Convert Img To Tensor Data{' '}
+            이미지 변환하기
           </RegularText>
         </RegularButton>
       )}
@@ -159,8 +158,7 @@ export const CanvasModule: FC<CanvasProps> = (props) => {
           btnStyles={CanvasStyles.btnView}
         >
           <RegularText textStyles={CanvasStyles.btnText}>
-            {' '}
-            Run Model Predict{' '}
+            포즈 분석하기
           </RegularText>
         </RegularButton>
       )}
