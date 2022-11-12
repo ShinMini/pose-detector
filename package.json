@@ -22,7 +22,7 @@
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
     "react-native-paper": "^4.12.5",
-    "react-native-svg": "^13.4.0",
+    "react-native-svg": "12.3.0",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.7"
   },

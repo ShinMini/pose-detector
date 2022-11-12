@@ -20,11 +20,11 @@ export default function App() {
   return (
     <>
       <SafeAreaView style={styles.flex}>
-        {/* <TopBar setPeople={setPeople} /> */}
-        <Content />
-        {/* <BottomBar /> */}
+        <TopBar setPeople={setPeople} />
+        <Content people={people} />
+        <BottomBar />
       </SafeAreaView>
-      {/* <FloatIcon /> */}
+      <FloatIcon />
     </>
   )
 }
