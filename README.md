@@ -3,8 +3,10 @@
 <br/>
 <br/>
 
-## [최종 결과](https://youtu.be/X4BHCnbC4iE)
-DETAIL: [ Notion Link ](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
+# Thumbnail: ![Image](https://user-images.githubusercontent.com/77220824/222054465-33cbc7d2-3497-4f11-b06a-28d4c465e7c9.png)
+# Preview: [YouTube](https://youtu.be/X4BHCnbC4iE)
+# Design: [Figma](https://www.figma.com/file/tHiV6t070oN6k0E3lFzGuB/RN-TFJS-Design?node-id=0%3A1&t=cU4D1vqqe4mIgZC3-1)
+# Detail: [Notion](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
 
 
 <br/>
