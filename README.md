@@ -5,6 +5,7 @@
 
 ## [최종 결과](https://youtu.be/X4BHCnbC4iE)
 DETAIL: [ Notion Link ](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
+![Thumbnail](https://user-images.githubusercontent.com/77220824/222018627-7ee02b85-81ee-4d24-b989-dbad7e2fa87d.png)
 
 <br/>
 <br/>
