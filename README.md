@@ -1,6 +1,10 @@
 # Pose Detector AI with React Native
 
-<div align="space-between">
+---
+
+## Brief Summary
+
+<div align="center">
   
 ![name](https://img.shields.io/badge/pose--dector-orange)
 ![author](https://img.shields.io/badge/ShinMini-b4ebca)
@@ -8,6 +12,8 @@
 ![last updated](https://img.shields.io/badge/23.01.xx-yellowgreen)
   
 </div>
+
+## Dependencies
 
 <div align="center">
   
