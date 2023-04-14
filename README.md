@@ -21,15 +21,14 @@
 
 1. build machine learning application on React Native
 2. using expo(not using used to native-cli), build both of android and ios platform
-3. build with tensorflow
-4. expo library와 react native 그리고 tensorflow.js library를 활용해 추가 기능 활용하기
+3. build the ML model with tensorflow
 
 ## Focus on
 
-1. Camera 사용하기.
-2. 사용자 library에서 사진 및 비디오 가져오기
-3. expo를 활용해 기초 어플 assets에 필요한 데이터 사전 구성하기(fonts, background image... etc)    
-4. tensorflow 머신 앱에서 연동시키기
-5. 사용자로부터 받아온 image 및 video 데이터를 tensorflow library가 인식할 수 있게 데이터 가공하기
-6. 가공된 데이터로 미리 학습시킨 tensor model로 부터 결과 예측하기
-7. 예측된 결과를 분석해 사용자에게 display 하기 
+1. using mobile pysical camera feature
+2. get photoes and videos from user's library
+3. chacing data at assets directory about requirement data to build application (fonts, background image... etc)    
+4. running tensorflow on mobile device with React Native application
+5. tailor data from user library to compactable tensorflow library
+6. predict result with tailored image data with tensor model
+7. display result data with UI for user
