@@ -4,7 +4,7 @@
 
 ## Brief Summary
 
-<div align="center">
+<div align="flex-start">
   
 ![name](https://img.shields.io/badge/pose--dector-orange)
 ![author](https://img.shields.io/badge/ShinMini-b4ebca)
@@ -15,7 +15,7 @@
 
 ## Dependencies
 
-<div align="center">
+<div align="flex-start">
   
 [![package - react](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/react?logo=react&logoColor=blue)](https://www.npmjs.com/package/react)
 [![package - expo](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/expo?logo=expo&logoColor=B4EBCA)](https://www.npmjs.com/package/expo)
