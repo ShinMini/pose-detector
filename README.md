@@ -1,4 +1,4 @@
-# EXPO_REACT_NATIVE_TFJS_POSE_MODEL
+# Pose Detector
 
 <br/>
 <br/>
@@ -10,20 +10,22 @@
 
 # Design: [Figma](https://www.figma.com/file/tHiV6t070oN6k0E3lFzGuB/RN-TFJS-Design?node-id=0%3A1&t=cU4D1vqqe4mIgZC3-1)
 
-# Detail: [Notion](https://www.notion.so/React-Native-TFJS-Pose-Detector-APP-7cb211e9e0ae4417904ca7803ee8f723)
+# Detail: [Notion](https://www.notion.so/shinmini/Pose-Detector-7cb211e9e0ae4417904ca7803ee8f723?showMoveTo=true)
 
 
 <br/>
 <br/>
 
 
-## 목표입니다.
-1. react native를 사용한 mobile app 만들기
-2. expo를 활용해, ios, android 모두 호환 가능한 앱 만들기
-3. tensorflow.js를 활용해 Machine learning 적용하기
+## Goals
+
+1. build machine learning application on React Native
+2. using expo(not using used to native-cli), build both of android and ios platform
+3. build with tensorflow
 4. expo library와 react native 그리고 tensorflow.js library를 활용해 추가 기능 활용하기
 
-## 핵심 기능입니다.
+## Focus on
+
 1. Camera 사용하기.
 2. 사용자 library에서 사진 및 비디오 가져오기
 3. expo를 활용해 기초 어플 assets에 필요한 데이터 사전 구성하기(fonts, background image... etc)    
