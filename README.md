@@ -8,8 +8,8 @@
   
 ![name](https://img.shields.io/badge/pose--dector-orange)
 ![author](https://img.shields.io/badge/ShinMini-b4ebca)
-![start at](https://img.shields.io/badge/stated--at--22.10.15-yellowgreen)
-![last updated](https://img.shields.io/badge/last--updated--23.01.xx-yellowgreen)
+![start at](https://img.shields.io/badge/stated-at--22.10.15-yellowgreen)
+![last updated](https://img.shields.io/badge/last-updated--23.01.xx-yellowgreen)
   
 </div>
 
