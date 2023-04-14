@@ -1,12 +1,6 @@
 # Pose Detector AI with React Native
 
-* Author: @ShinMini
-* started at: 22.10.15
-* last updated: 23.01.xx
-
----
-
-<div align="center">
+<div align="space-between">
   
 ![name](https://img.shields.io/badge/pose--dector-orange)
 ![author](https://img.shields.io/badge/ShinMini-b4ebca)
@@ -14,6 +8,8 @@
 ![last updated](https://img.shields.io/badge/23.01.xx-yellowgreen)
   
 </div>
+
+---
 
 <div align="center">
   
@@ -57,3 +53,10 @@
 * Design: [Figma](https://www.figma.com/file/tHiV6t070oN6k0E3lFzGuB/RN-TFJS-Design?node-id=0%3A1&t=cU4D1vqqe4mIgZC3-1)
 
 * Detail: [Notion](https://www.notion.so/shinmini/Pose-Detector-7cb211e9e0ae4417904ca7803ee8f723?showMoveTo=true)
+
+---
+
+* Author: @ShinMini
+* started at: 22.10.15
+* last updated: 23.01.xx
+
