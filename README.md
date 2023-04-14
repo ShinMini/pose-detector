@@ -12,7 +12,7 @@
 
 [![package - react](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/react?logo=react&logoColor=blue)](https://www.npmjs.com/package/react)
 
-[![package - expo](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/expo-2A9D8F?logo=expo&logoColor=B4EBCA)](https://www.npmjs.com/package/expo)
+[![package - expo](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/expo-2a9d8f?logo=expo&logoColor=B4EBCA)](https://www.npmjs.com/package/expo)
 
 [![package - @tensorflow/tfjs](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/@tensorflow/tfjs-E9C46A?logo=tensorflow&logoColor=orange)](https://www.npmjs.com/package/@tensorflow/tfjs)
 
