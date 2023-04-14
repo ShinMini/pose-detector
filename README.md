@@ -4,11 +4,19 @@
 * started at: 22.10.15
 * last updated: 23.01.xx
 
+![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+
+[![package - reactnative](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/badge-generator/react?logo=react.js&logoColor=white)](https://www.npmjs.com/package/react)
+
 ---
 
 # Thumbnail
 
-![Image](https://user-images.githubusercontent.com/77220824/222054465-33cbc7d2-3497-4f11-b06a-28d4c465e7c9.png)
+![Thumbnail](https://user-images.githubusercontent.com/77220824/222054465-33cbc7d2-3497-4f11-b06a-28d4c465e7c9.png)
 
 
 # Goals
