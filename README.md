@@ -8,11 +8,10 @@
 
 <div align="center">
   
-![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
-![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
-![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
-![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
-![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
+![name](https://img.shields.io/badge/pose--dector-orange)
+![author](https://img.shields.io/badge/ShinMini-b4ebca)
+![start at](https://img.shields.io/badge/22.10.15-yellowgreen)
+![last updated](https://img.shields.io/badge/23.01.xx-yellowgreen)
   
 </div>
 
