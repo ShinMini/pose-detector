@@ -12,11 +12,11 @@
 
 [![package - react](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/react?logo=react&logoColor=blue)](https://www.npmjs.com/package/react)
 
-[![package - expo](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/expo-green?logo=expo&logoColor=B4EBCA)](https://www.npmjs.com/package/expo)
+[![package - expo](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/expo?logo=expo&logoColor=B4EBCA)](https://www.npmjs.com/package/expo)
 
-[![package - @tensorflow/tfjs](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/@tensorflow/tfjs-E9C46A?logo=tensorflow&logoColor=orange)](https://www.npmjs.com/package/@tensorflow/tfjs)
+[![package - @tensorflow/tfjs](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/@tensorflow/tfjs?logo=tensorflow&logoColor=orange)](https://www.npmjs.com/package/@tensorflow/tfjs)
 
-[![package - @shopify/react-native-skia](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/@shopify/react-native-skia-BCF4F5?logo=@shopify/react-native-skia&logoColor=BCF4F5)](https://www.npmjs.com/package/@shopify/react-native-skia)
+[![package - @shopify/react-native-skia](https://img.shields.io/github/package-json/dependency-version/ShinMini/pose-detector/@shopify/react-native-skia?logo=@shopify/react-native-skia&logoColor=BCF4F5)](https://www.npmjs.com/package/@shopify/react-native-skia)
 
 ---
 
