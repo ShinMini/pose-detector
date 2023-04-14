@@ -47,17 +47,13 @@
 6. predict result with tailored image data with tensor model
 7. display result data with UI for user
 
-# Result 
+# Check the Results
 
-* Preview: [YouTube](https://youtu.be/X4BHCnbC4iE)
+### Preview: [YouTube](https://youtu.be/X4BHCnbC4iE)
 
-* Design: [Figma](https://www.figma.com/file/tHiV6t070oN6k0E3lFzGuB/RN-TFJS-Design?node-id=0%3A1&t=cU4D1vqqe4mIgZC3-1)
+### Design: [Figma](https://www.figma.com/file/tHiV6t070oN6k0E3lFzGuB/RN-TFJS-Design?node-id=0%3A1&t=cU4D1vqqe4mIgZC3-1)
 
-* Detail: [Notion](https://www.notion.so/shinmini/Pose-Detector-7cb211e9e0ae4417904ca7803ee8f723?showMoveTo=true)
+### Detail: [Notion](https://www.notion.so/shinmini/Pose-Detector-7cb211e9e0ae4417904ca7803ee8f723?showMoveTo=true)
 
----
 
-* Author: @ShinMini
-* started at: 22.10.15
-* last updated: 23.01.xx
-
+<br/>
