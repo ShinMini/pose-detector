@@ -10,7 +10,7 @@
 ![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
 ![Author](https://img.shields.io/badge/ShinMini-pose--dector-yellowgreen)
 
-[![package - reactnative](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/badge-generator/react?logo=react.js&logoColor=white)](https://www.npmjs.com/package/react)
+[![package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/badge-generator/react?logo=react.js&logoColor=white)](https://www.npmjs.com/package/react)
 
 ---
 
