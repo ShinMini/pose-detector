@@ -42,15 +42,16 @@
 2. using expo(not using used to native-cli), build both of android and ios platform
 3. build the ML model with tensorflow
 
-# Focus on
+# Including features:
 
-1. using mobile pysical camera feature
-2. get photoes and videos from user's library
-3. chacing data at assets directory about requirement data to build application (fonts, background image... etc)    
-4. running tensorflow on mobile device with React Native application
-5. tailor data from user library to compactable tensorflow library
-6. predict result with tailored image data with tensor model
-7. display result data with UI for user
+1. Camera function - expo, expo-camera
+2. Get image and video files from user's library - media-picker, expo
+3. Chache the config data at assets directory while app building (fonts, background image... etc) - config, local-storage
+4. Running tensorflow.js model on React-Native environment - react-native, local-storage, redux-toolkit, config
+5. Optimize the data from user which can be interactive with tensorflow library - media-picker, tensorflow.js, typescript
+6. Check a prediected result from tensor API - tensorflow.js, util.fs, util.promisfy
+7. Draw the result value on User Interface by graphical animation - Skia, re-animated
+
 
 # Check the Results
 
